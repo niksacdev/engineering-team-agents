@@ -1,0 +1,56 @@
+---
+description: "Core development rules for projects with engineering team agents"
+alwaysApply: true
+---
+
+# Engineering Team Agent Enhanced Project Rules
+
+## Primary Reference
+**NOTE**: This template will be customized during the bootstrap process to match your specific project context, technology stack, and domain requirements.
+
+## Project Context (To Be Customized)
+This project uses enterprise-grade engineering team agents to enhance development workflow through comprehensive guidance on code quality, security compliance, architecture decisions, business strategy, user experience, and DevOps excellence.
+
+## Critical Rules (Adapt to Your Stack)
+
+1. **Security**: Follow security best practices for your domain and technology stack
+2. **Code Quality**: Maintain high code quality standards through automated validation
+3. **Documentation**: Use file path references and external documentation instead of inline code
+4. **Testing**: Run comprehensive validation before any commit
+5. **Package Management**: Use consistent package management tools as defined in your project
+
+## Quick Commands (Customize for Your Tools)
+**NOTE**: These will be updated during bootstrap based on your project setup:
+- Validate: `[your validation command]`
+- Test: `[your test command]` 
+- Build: `[your build command]`
+- Run: `[your run command]`
+
+## Engineering Team Agent Integration
+
+This project includes enterprise-grade engineering team agents that auto-activate based on file patterns:
+
+### Available Expertise
+- **Code Review**: SOLID principles, security assessment, performance analysis, enterprise compliance
+- **Architecture Review**: ADR creation, distributed system patterns, scalability design, security architecture
+- **Product Management**: Requirements gathering, business value alignment, compliance frameworks
+- **UX/UI Design**: WCAG compliance, accessibility standards, design systems, user research validation
+- **DevOps**: Security automation, compliance pipelines, enterprise deployment patterns
+
+### Auto-Activation Patterns
+- **Security Rules**: Activate for service, API, auth, and model files
+- **Testing Rules**: Activate for all test files and testing patterns
+- **Project Rules**: Always active for general development guidance
+
+### Agent Development Best Practices
+- **Token Optimization**: Use file references over inline content, structured output
+- **Context Management**: Preserve context, avoid circular reasoning loops
+- **Multi-Agent Coordination**: Sequential, parallel, and hybrid workflows
+- **Error Handling**: Graceful failure modes with human escalation triggers
+
+## Best Practices
+1. **Agent-First Development**: Proactively use agents for guidance and validation
+2. **Iterative Improvement**: Regularly update practices based on project evolution
+3. **Context Management**: Maintain clear context during development sessions
+4. **Quality Focus**: Never compromise on appropriate quality standards
+5. **Documentation Hygiene**: Keep documentation current with code changes

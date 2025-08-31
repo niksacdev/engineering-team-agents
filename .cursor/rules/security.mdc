@@ -1,0 +1,173 @@
+---
+description: "Enterprise security and compliance requirements"
+globs:
+  - "**/*service*.py"
+  - "**/*server*.py"
+  - "**/*api*.py"
+  - "**/*auth*.py"
+  - "**/*security*.py"
+  - "**/models/*.py"
+  - "**/controllers/*.py"
+  - "**/handlers/*.py"
+  - "**/*.service.js"
+  - "**/*.service.ts"
+  - "**/api/*.js"
+  - "**/api/*.ts"
+  - "**/*controller*.js"
+  - "**/*controller*.ts"
+---
+
+# Enterprise Security & Compliance Rules
+
+## CRITICAL: Data Protection (Enterprise Standards)
+**NOTE**: These will be customized during bootstrap based on your specific domain and compliance requirements:
+
+### Data Classification & Handling
+- **Personally Identifiable Information (PII)**: Handle according to GDPR, CCPA, and domain requirements
+- **Sensitive Data**: Use appropriate identifiers, avoid exposing sensitive information in logs
+- **Data Sovereignty**: Consider data residency and cross-border data transfer requirements
+- **Encryption**: Encrypt sensitive data in transit (TLS) and at rest (AES-256)
+- **Data Retention**: Implement appropriate data lifecycle and retention policies
+
+### Security by Design Principles
+- **Zero Trust Architecture**: Never trust, always verify at each service boundary
+- **Principle of Least Privilege**: Minimal access rights, just-in-time permissions
+- **Defense in Depth**: Multiple security layers, no single security control dependency
+- **Fail Securely**: System fails to secure state by default
+- **Security by Design**: Build security into architecture, not bolted on later
+
+## Enterprise Security Framework
+
+### Input Validation & Sanitization
+- **Validate all inputs** using appropriate validation libraries
+- **Sanitize user input** to prevent injection attacks (SQL, XSS, Command, LDAP)
+- **Type checking** to ensure data conforms to expected formats
+- **Boundary validation** for numerical inputs and string lengths
+- **File upload security**: Validate file types, scan for malware, size limits
+
+### Authentication & Authorization
+- **Multi-Factor Authentication (MFA)**: Implement for all privileged accounts
+- **Single Sign-On (SSO)**: Enterprise identity provider integration
+- **Role-Based Access Control (RBAC)**: Granular permission management
+- **OAuth 2.0 / OpenID Connect**: Secure API authentication
+- **Session Management**: Secure session handling, timeout policies
+
+### API Security
+- **Rate Limiting**: Prevent abuse and DDoS attacks
+- **API Gateway**: Centralized security enforcement point
+- **JWT Security**: Proper token validation, expiration, refresh patterns
+- **CORS Configuration**: Appropriate cross-origin resource sharing policies
+- **API Versioning**: Secure deprecation of old API versions
+
+### Data Protection in Code
+- **Secret Management**: Use secure vaults (HashiCorp Vault, AWS Secrets Manager)
+- **Environment Variables**: Never hardcode secrets in code
+- **Secure Configuration**: Externalize security-sensitive configuration
+- **Audit Logging**: Log security events without exposing sensitive data
+- **Error Handling**: No sensitive information in error messages
+
+## Compliance Requirements (Domain-Specific)
+
+### GDPR (General Data Protection Regulation)
+- **Data Minimization**: Collect only necessary data
+- **Consent Management**: Explicit user consent for data processing
+- **Right to be Forgotten**: Data deletion capabilities
+- **Data Portability**: Export user data in standard formats
+- **Breach Notification**: Automated breach detection and reporting
+
+### HIPAA (Healthcare)
+- **Protected Health Information (PHI)**: Encrypt and audit access
+- **Minimum Necessary**: Access only required data
+- **Business Associate Agreements**: Third-party compliance
+- **Audit Trails**: Comprehensive access logging
+
+### PCI-DSS (Payment Card Industry)
+- **Cardholder Data**: Secure storage, transmission, and processing
+- **Network Segmentation**: Isolate payment processing systems
+- **Regular Security Testing**: Penetration testing, vulnerability scans
+- **Access Controls**: Strict access to payment systems
+
+### SOX (Sarbanes-Oxley)
+- **Financial Data Integrity**: Immutable audit trails
+- **Change Management**: Documented and approved changes
+- **Separation of Duties**: No single person controls entire processes
+- **Regular Audits**: Compliance monitoring and reporting
+
+## Security Testing & Validation
+
+### Static Analysis Security Testing (SAST)
+- **Code Scanning**: Automated vulnerability detection
+- **Dependency Scanning**: Known vulnerability databases
+- **Secret Detection**: Prevent committed secrets
+- **Security Hotspots**: Manual review of security-sensitive code
+
+### Dynamic Analysis Security Testing (DAST)
+- **Penetration Testing**: Regular security assessments
+- **Vulnerability Scanning**: Network and application scanning
+- **Security Monitoring**: Runtime threat detection
+- **Incident Response**: Automated security incident handling
+
+### Security Code Review Checklist
+- [ ] **Input Validation**: All inputs validated and sanitized
+- [ ] **Authentication**: Proper identity verification
+- [ ] **Authorization**: Appropriate access controls
+- [ ] **Session Management**: Secure session handling
+- [ ] **Cryptography**: Strong encryption algorithms and key management
+- [ ] **Error Handling**: No information disclosure in errors
+- [ ] **Logging**: Security events logged appropriately
+- [ ] **Configuration**: Secure default configurations
+
+## Enterprise Security Patterns
+
+### Secure Architecture Patterns
+1. **API Gateway Pattern**: Centralized security enforcement
+2. **Circuit Breaker**: Prevent cascade failures
+3. **Bulkhead**: Isolate security domains
+4. **Secure Token Pattern**: Stateless authentication
+5. **Audit Trail Pattern**: Immutable security event logging
+
+### Threat Modeling
+- **STRIDE Analysis**: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege
+- **Attack Surface Analysis**: Identify and minimize exposure points
+- **Security Control Validation**: Verify effectiveness of security measures
+- **Risk Assessment**: Quantify and prioritize security risks
+
+## Monitoring & Incident Response
+
+### Security Monitoring
+- **SIEM Integration**: Security Information and Event Management
+- **Anomaly Detection**: Behavioral analysis for threat detection
+- **Real-time Alerting**: Immediate notification of security events
+- **Threat Intelligence**: External threat feed integration
+
+### Incident Response
+- **Incident Classification**: Severity and impact assessment
+- **Response Procedures**: Documented incident handling steps
+- **Forensic Capabilities**: Evidence preservation and analysis
+- **Recovery Procedures**: Business continuity and disaster recovery
+
+## Best Practices Summary
+
+1. **Security by Design**: Build security into architecture from the beginning
+2. **Principle of Least Privilege**: Grant minimum necessary access
+3. **Defense in Depth**: Multiple layers of security controls
+4. **Regular Updates**: Keep dependencies and security tools current
+5. **Security Training**: Ensure team understands security requirements
+6. **Compliance Monitoring**: Regular assessment of regulatory compliance
+7. **Incident Preparedness**: Have response procedures ready
+8. **Continuous Improvement**: Learn from security events and assessments
+
+## Agent Development Security Patterns
+- **Context Window Management**: Avoid exposing sensitive data in agent context
+- **Structured Output**: Use consistent formats to prevent information leakage
+- **Error Handling**: Graceful failure without exposing system internals
+- **Safety Guardrails**: Content filtering and appropriate response boundaries
+- **Token Optimization**: Minimize sensitive data in prompts and responses
+
+## Enterprise Security Patterns for Multi-Agent Systems
+- **Agent Isolation**: Separate agent contexts for different security domains
+- **Secure Tool Selection**: Agents choose tools based on security requirements
+- **Audit Trail**: Log agent decisions and tool usage for security monitoring
+- **Human Escalation**: Trigger human review for security-sensitive decisions
+
+Remember: Security is not a feature but a fundamental requirement. Implement appropriate security controls based on your specific domain requirements, regulatory obligations, and risk tolerance.

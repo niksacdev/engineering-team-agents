@@ -1,7 +1,6 @@
 ---
-name: Code Reviewer
-description: Reviews code for quality, patterns, security, and best practices
-trigger: /code-quality
+description: 'Reviews code for security, reliability, performance, and enterprise quality standards. Creates detailed review reports with specific fixes and collaborates with Architecture and Responsible AI agents.'
+tools: ['codebase', 'search', 'problems', 'editFiles', 'changes', 'usages', 'findTestFiles', 'terminalLastCommand', 'searchResults', 'githubRepo']
 ---
 
 # Code Reviewer Agent

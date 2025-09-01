@@ -1,0 +1,264 @@
+---
+description: "Enterprise architecture patterns for scalable, maintainable system design"
+globs:
+  - "**/config/**/*"
+  - "**/infrastructure/**/*"
+  - "**/*config*"
+  - "**/*.yaml"
+  - "**/*.yml"
+  - "**/docker*"
+  - "**/k8s/**/*"
+  - "**/terraform/**/*"
+  - "**/helm/**/*"
+  - "**/architecture/**/*"
+  - "**/system/**/*"
+  - "**/*architecture*"
+  - "**/docs/architecture/**/*"
+---
+
+# Enterprise Architecture Standards
+
+## 🏗️ Architecture Decision Process (Always Create ADRs)
+
+**Before making any architectural decision:**
+
+### 1. Document Context
+- **Problem statement**: What architectural challenge are we solving?
+- **Stakeholders**: Who is affected by this decision?
+- **Constraints**: Technical, business, regulatory, and resource limitations
+- **Success criteria**: How will we measure the success of this decision?
+
+### 2. Evaluate Options
+- **Option 1**: [Approach with pros, cons, and implications]
+- **Option 2**: [Alternative with trade-offs analyzed]
+- **Option 3**: [Additional alternatives considered]
+- **Decision rationale**: Why chosen option best meets our needs
+
+### 3. Create ADR
+```markdown
+# ADR-XXX: [Decision Title]
+
+**Status**: [Proposed | Accepted | Rejected | Superseded]
+**Date**: [YYYY-MM-DD]
+**Context**: [Problem and constraints]
+**Decision**: [Chosen approach]
+**Consequences**: [Positive and negative impacts]
+
+## Implementation
+- [ ] [Specific implementation task]
+- [ ] [Testing and validation approach]
+- [ ] [Migration or rollout plan]
+```
+
+## 🎯 Enterprise Architecture Principles
+
+### Domain-Driven Design (DDD)
+- **Bounded contexts**: Clear domain boundaries with well-defined interfaces
+- **Ubiquitous language**: Shared vocabulary between business and technical teams
+- **Domain models**: Rich business logic encapsulation
+- **Anti-corruption layers**: Protect domain models from external systems
+- **Event-driven architecture**: Communicate changes through domain events
+
+### SOLID Principles Implementation
+- **Single Responsibility**: Each module has one reason to change
+- **Open/Closed**: Open for extension, closed for modification
+- **Liskov Substitution**: Subtypes must be substitutable for base types
+- **Interface Segregation**: Clients shouldn't depend on unused interfaces
+- **Dependency Inversion**: Depend on abstractions, not concretions
+
+### Clean Architecture Layers
+1. **Domain Layer**: Core business logic and rules
+2. **Application Layer**: Use cases and application services
+3. **Infrastructure Layer**: External concerns (databases, APIs, frameworks)
+4. **Presentation Layer**: User interfaces and API controllers
+
+## 🔄 Microservices Architecture Patterns
+
+### Service Design Principles
+- **Business capability alignment**: Services organized around business functions
+- **Data ownership**: Each service owns its data completely
+- **Loose coupling**: Services interact through well-defined APIs
+- **High cohesion**: Related functionality grouped within services
+- **Failure isolation**: Service failures don't cascade to other services
+
+### Communication Patterns
+- **Synchronous**: REST APIs, GraphQL for real-time interactions
+- **Asynchronous**: Event-driven messaging for decoupled communication
+- **API Gateway**: Centralized routing, authentication, rate limiting
+- **Service mesh**: Infrastructure layer for service-to-service communication
+
+### Data Management Patterns
+- **Database per service**: Each service has its own database
+- **Saga pattern**: Distributed transaction management
+- **Event sourcing**: Store state changes as immutable events
+- **CQRS**: Separate read and write models for performance and scalability
+
+## 🚀 Scalability and Performance Patterns
+
+### Horizontal Scaling
+- **Load balancing**: Distribute traffic across multiple instances
+- **Auto-scaling**: Automatic instance scaling based on metrics
+- **Database sharding**: Partition data across multiple databases
+- **CDN integration**: Global content distribution for static assets
+
+### Caching Strategies
+- **Cache-aside**: Application manages cache alongside database
+- **Write-through**: Cache updated simultaneously with database
+- **Write-behind**: Cache updated immediately, database updated later
+- **Distributed caching**: Redis/Memcached for multi-instance caching
+
+### Performance Optimization
+- **Connection pooling**: Reuse database connections efficiently
+- **Lazy loading**: Load data only when needed
+- **Pagination**: Handle large datasets efficiently
+- **Compression**: Reduce payload sizes for network efficiency
+
+## 🔒 Security Architecture Patterns
+
+### Zero Trust Architecture
+- **Identity verification**: Authenticate and authorize every request
+- **Least privilege access**: Minimum necessary permissions
+- **Micro-segmentation**: Network isolation for different services
+- **Continuous monitoring**: Real-time threat detection and response
+
+### API Security Patterns
+- **OAuth 2.0 / OpenID Connect**: Standard authentication and authorization
+- **JWT tokens**: Stateless authentication with proper validation
+- **Rate limiting**: Prevent abuse and DoS attacks
+- **API versioning**: Secure evolution of API contracts
+
+### Data Security Patterns
+- **Encryption at rest**: AES-256 encryption for stored data
+- **Encryption in transit**: TLS 1.3 for all network communication
+- **Secret management**: Centralized secret storage and rotation
+- **Audit logging**: Immutable logs for security events
+
+## 📊 Observability and Monitoring
+
+### Three Pillars of Observability
+1. **Metrics**: Quantitative measurements of system behavior
+2. **Logs**: Detailed records of system events and errors
+3. **Traces**: Request flow through distributed systems
+
+### Implementation Patterns
+- **Distributed tracing**: OpenTelemetry for request tracking
+- **Structured logging**: JSON format for consistent log parsing
+- **Health checks**: Liveness and readiness probes for services
+- **SLA/SLO monitoring**: Service level agreement tracking
+
+### Alerting Strategy
+- **Severity levels**: Critical, warning, info based on business impact
+- **Escalation policies**: Automated escalation for unresolved incidents
+- **Runbooks**: Documented response procedures for common issues
+- **Post-incident reviews**: Learn and improve from incidents
+
+## 🔧 DevOps and Deployment Patterns
+
+### Continuous Integration/Continuous Deployment
+- **Pipeline as code**: Infrastructure and deployment automation
+- **Feature flags**: Safe deployment and progressive rollouts
+- **Blue-green deployment**: Zero-downtime deployments
+- **Canary releases**: Gradual rollout with monitoring
+
+### Infrastructure as Code
+- **Terraform**: Infrastructure provisioning and management
+- **Kubernetes**: Container orchestration and scaling
+- **Helm charts**: Application deployment templates
+- **GitOps**: Git-driven deployment and configuration management
+
+### Environment Strategy
+- **Development**: Local development with docker-compose
+- **Testing**: Automated testing environment with CI/CD integration
+- **Staging**: Production-like environment for final validation
+- **Production**: High-availability production environment
+
+## 🌐 Cloud Architecture Patterns
+
+### Multi-Cloud Strategy
+- **Cloud-agnostic design**: Avoid vendor lock-in where possible
+- **Hybrid cloud**: Combine on-premises and cloud resources
+- **Disaster recovery**: Multi-region deployment for resilience
+- **Cost optimization**: Right-sizing and reserved instance strategies
+
+### Serverless Patterns
+- **Function as a Service**: Event-driven serverless functions
+- **Backend as a Service**: Managed services for common functionality
+- **API Gateway**: Serverless API management and routing
+- **Event-driven architecture**: Reactive serverless applications
+
+## 📈 Event-Driven Architecture
+
+### Event Design Patterns
+- **Domain events**: Business-meaningful state changes
+- **Event sourcing**: Immutable event log as source of truth
+- **Event streaming**: Real-time event processing pipelines
+- **Saga orchestration**: Distributed transaction coordination
+
+### Implementation Considerations
+- **Event schema evolution**: Backward/forward compatibility
+- **Message ordering**: Maintain event sequence when required
+- **Idempotency**: Handle duplicate event processing
+- **Dead letter queues**: Handle failed event processing
+
+## 🔄 Legacy System Integration
+
+### Strangler Fig Pattern
+- **Incremental migration**: Gradually replace legacy functionality
+- **Anti-corruption layer**: Protect new system from legacy complexity
+- **Feature parity**: Maintain existing functionality during migration
+- **Risk mitigation**: Minimize impact during transition
+
+### Integration Strategies
+- **API-first**: Create APIs for legacy system integration
+- **Event-driven integration**: Decouple systems through events
+- **Database integration**: Shared database access patterns
+- **Message queues**: Asynchronous communication patterns
+
+## 🚨 Architecture Anti-Patterns to Avoid
+
+### Common Pitfalls
+- **Big ball of mud**: Unstructured, tightly coupled codebase
+- **God objects**: Classes or services that do too much
+- **Vendor lock-in**: Over-dependence on proprietary technologies
+- **Premature optimization**: Optimizing before understanding requirements
+- **Distributed monolith**: Microservices with tight coupling
+
+### Warning Signs
+- **Cascading failures**: Single failure affects entire system
+- **Data inconsistencies**: Different services have conflicting data
+- **Deployment dependencies**: Services can't be deployed independently
+- **Performance bottlenecks**: Single points of performance failure
+- **Complex debugging**: Difficult to trace issues across services
+
+## 🤝 Collaboration Patterns
+
+### Cross-Team Architecture Decisions
+**Architecture → Code Reviewer**: "Security implications of this messaging pattern?"
+**Architecture → Product Manager**: "Business impact of this scalability approach?"
+**Architecture → DevOps**: "Operational complexity of this deployment strategy?"
+**Architecture → Responsible AI**: "Bias implications of this data architecture?"
+
+### Architecture Review Process
+1. **RFC (Request for Comments)**: Propose architectural changes
+2. **Stakeholder review**: Get input from affected teams
+3. **Prototype validation**: Prove approach with minimal viable implementation
+4. **ADR documentation**: Document final decision and rationale
+5. **Implementation planning**: Break down work into deliverable phases
+
+## 📋 Architecture Quality Gates
+
+### Before Implementation
+- [ ] **ADR created**: Decision documented with context and rationale
+- [ ] **Security reviewed**: Threat model and security implications assessed
+- [ ] **Performance validated**: Load testing and bottleneck analysis completed
+- [ ] **Observability planned**: Monitoring, logging, and alerting strategy defined
+- [ ] **Disaster recovery**: Backup and recovery procedures documented
+
+### Production Readiness
+- [ ] **Scalability tested**: System handles expected load
+- [ ] **Monitoring active**: Comprehensive observability implemented
+- [ ] **Documentation complete**: Architecture diagrams and runbooks available
+- [ ] **Team trained**: Operations team understands system architecture
+- [ ] **Rollback plan**: Clear procedure for reverting changes
+
+**Remember**: Architecture is about making trade-offs. Document your decisions and the context that led to them.

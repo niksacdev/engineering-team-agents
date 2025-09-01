@@ -1,0 +1,215 @@
+---
+description: "Inclusive design and accessibility compliance for UI components and user interfaces"
+globs:
+  - "**/*.jsx"
+  - "**/*.tsx"
+  - "**/components/**/*"
+  - "**/pages/**/*"
+  - "**/ui/**/*"
+  - "**/*.vue"
+  - "**/*.svelte"
+  - "**/templates/**/*"
+  - "**/*.html"
+  - "**/styles/**/*"
+  - "**/*.css"
+  - "**/*.scss"
+---
+
+# UX & Accessibility Enterprise Standards
+
+## 🌍 Accessibility-First Design (WCAG 2.1 AA Compliance)
+
+**Before creating any UI component, ensure:**
+
+### 1. Keyboard Navigation
+- **Tab order**: Logical and predictable navigation sequence
+- **Focus indicators**: Visible focus states for all interactive elements
+- **Keyboard shortcuts**: Standard keyboard interactions (Enter, Space, Arrow keys)
+- **Skip links**: Navigation bypass for screen readers
+- **Trapped focus**: Proper focus management in modals and dialogs
+
+### 2. Screen Reader Support
+- **Semantic HTML**: Use proper HTML elements for their intended purpose
+- **ARIA labels**: Descriptive labels for complex interactions
+- **Alt text**: Meaningful descriptions for images and media
+- **Headings**: Proper heading hierarchy (h1, h2, h3...)
+- **Form labels**: Clear association between labels and form controls
+
+### 3. Visual Accessibility
+- **Color contrast**: Minimum 4.5:1 for normal text, 3:1 for large text
+- **Color independence**: Information not conveyed by color alone
+- **Text size**: Scalable fonts, readable at 200% zoom
+- **Visual hierarchy**: Clear content organization and relationships
+
+## 🎨 User Experience Design Principles
+
+### User-Centered Design Process
+1. **User Research**: Understand actual user needs and contexts
+2. **Persona Development**: Specific user archetypes, not generic assumptions
+3. **Journey Mapping**: Current vs future state user workflows
+4. **Usability Testing**: Validation with real users, including assistive technology users
+
+### Inclusive Design Patterns
+- **Progressive Enhancement**: Start with basic functionality, add enhancements
+- **Responsive Design**: Mobile-first, works on all device sizes
+- **Performance**: Fast loading, works on slow connections
+- **Offline Support**: Graceful degradation when connectivity is poor
+
+## 🔍 Accessibility Testing Requirements
+
+### Manual Testing Checklist
+- [ ] **Keyboard only**: Complete all tasks using only keyboard
+- [ ] **Screen reader**: Test with NVDA, JAWS, or VoiceOver
+- [ ] **High contrast**: Test in Windows High Contrast Mode
+- [ ] **Zoom test**: Usable at 200% zoom without horizontal scrolling
+- [ ] **Color blindness**: Test with color blindness simulators
+- [ ] **Reduced motion**: Respect prefers-reduced-motion settings
+
+### Automated Testing Tools
+- **axe-core**: Integrate accessibility testing into CI/CD
+- **Wave**: Browser extension for accessibility evaluation
+- **Lighthouse**: Accessibility audit in Chrome DevTools
+- **Pa11y**: Command-line accessibility testing
+
+## 🚀 Component Design Patterns
+
+### Form Accessibility
+```html
+<!-- Good: Accessible form pattern -->
+<div>
+  <label for="email">Email Address</label>
+  <input 
+    id="email" 
+    type="email" 
+    aria-describedby="email-help email-error" 
+    required 
+    aria-invalid="false"
+  />
+  <div id="email-help">We'll use this for account recovery</div>
+  <div id="email-error" role="alert" aria-live="polite"></div>
+</div>
+```
+
+### Interactive Component Patterns
+```html
+<!-- Good: Accessible button -->
+<button type="button" aria-expanded="false" aria-controls="menu-items">
+  Menu <span aria-hidden="true">▼</span>
+</button>
+
+<!-- Good: Accessible modal -->
+<div role="dialog" aria-labelledby="modal-title" aria-modal="true">
+  <h2 id="modal-title">Confirm Action</h2>
+  <p>Are you sure you want to delete this item?</p>
+  <button type="button">Cancel</button>
+  <button type="button" class="primary">Delete</button>
+</div>
+```
+
+### Error Handling UX
+- **Clear error messages**: Explain what went wrong and how to fix it
+- **Inline validation**: Real-time feedback without form submission
+- **Error summary**: List all errors at top of form for screen readers
+- **Success feedback**: Confirm when actions complete successfully
+
+## 📱 Responsive Design Standards
+
+### Mobile-First Approach
+1. **Touch targets**: Minimum 44px for touchable elements
+2. **Thumb-friendly**: Important actions within thumb reach
+3. **Orientation support**: Works in both portrait and landscape
+4. **Performance**: Fast loading on mobile networks
+
+### Breakpoint Strategy
+- **Small**: 320px - 768px (mobile phones)
+- **Medium**: 769px - 1024px (tablets) 
+- **Large**: 1025px - 1440px (desktops)
+- **Extra Large**: 1441px+ (large displays)
+
+## 🎯 User Journey Validation
+
+### Core User Flows
+1. **First-time user**: Can they understand purpose and complete key actions?
+2. **Returning user**: Can they efficiently complete familiar tasks?
+3. **Error recovery**: Can they recover from mistakes gracefully?
+4. **Accessibility**: Can users with disabilities complete all tasks?
+
+### Performance Requirements
+- **First Contentful Paint**: < 1.5 seconds
+- **Largest Contentful Paint**: < 2.5 seconds  
+- **Cumulative Layout Shift**: < 0.1
+- **First Input Delay**: < 100ms
+
+## 🔗 Content Design Standards
+
+### Writing for Accessibility
+- **Plain language**: Clear, concise, conversational tone
+- **Scannable content**: Headings, bullet points, short paragraphs
+- **Action-oriented**: Clear calls-to-action and next steps
+- **Error messages**: Helpful, specific, solution-focused
+
+### Internationalization (i18n)
+- **Text expansion**: UI accommodates 30% longer translated text
+- **RTL support**: Works with right-to-left languages
+- **Cultural sensitivity**: Colors, images, icons appropriate for global audiences
+- **Date/time formats**: Localized formatting for different regions
+
+## 🛠️ Design System Integration
+
+### Component Library Standards
+- **Accessibility props**: Built-in support for ARIA attributes
+- **Consistent patterns**: Reusable, tested accessibility solutions
+- **Documentation**: Clear usage guidelines and accessibility notes
+- **Testing**: Each component tested for accessibility compliance
+
+### Design Tokens
+- **Color palette**: Sufficient contrast ratios built-in
+- **Typography**: Readable fonts, appropriate size scales
+- **Spacing**: Consistent, predictable layout patterns
+- **Animation**: Respects user preferences for reduced motion
+
+## 📊 Success Metrics
+
+### Accessibility KPIs
+- **WCAG compliance**: 100% Level AA conformance
+- **Keyboard completion rate**: Users can complete tasks keyboard-only
+- **Screen reader task success**: Core flows work with assistive technology
+- **Color contrast scores**: All text meets minimum contrast requirements
+
+### User Experience KPIs  
+- **Task completion rate**: Users successfully complete intended actions
+- **Time to complete**: Efficiency of user workflows
+- **Error recovery rate**: Users successfully recover from errors
+- **Satisfaction scores**: User feedback on experience quality
+
+## 🔄 Continuous Improvement
+
+### User Testing Schedule
+- **Usability testing**: Monthly sessions with diverse user groups
+- **Accessibility testing**: Quarterly sessions with assistive technology users
+- **Performance monitoring**: Continuous Core Web Vitals tracking
+- **Feedback integration**: Regular review and incorporation of user feedback
+
+### Design Review Process
+1. **Accessibility review**: Check compliance before development
+2. **Cross-browser testing**: Verify compatibility across browsers
+3. **Device testing**: Validate on actual mobile devices
+4. **User validation**: Test with real users before release
+
+## 🚨 Red Flags - Stop Development
+
+- **Keyboard inaccessible**: Any feature that can't be used keyboard-only
+- **Screen reader failures**: Content not announced or confusing
+- **Color-only information**: Critical info conveyed by color alone
+- **Poor contrast**: Text that doesn't meet WCAG contrast requirements
+- **Mobile unusable**: Features that don't work on mobile devices
+- **Performance issues**: Slow loading or unresponsive interactions
+
+## 🤝 Collaboration with Other Agents
+
+**UX Designer → Product Manager**: "Does this user journey align with business objectives?"
+**UX Designer → Responsible AI**: "Any accessibility barriers with this interface approach?"
+**UX Designer → Code Reviewer**: "How do we implement this interaction securely?"
+**UX Designer → System Architect**: "What are the technical constraints for this user experience?"
+
+**Remember**: Great UX is invisible - users should accomplish their goals efficiently without thinking about the interface.

@@ -1,7 +1,6 @@
 ---
-name: System Architecture Reviewer
-description: Reviews system architecture, analyzes impacts, and validates design decisions
-trigger: /architecture-review
+description: 'Reviews system architecture, creates ADRs, validates scalability and security. Collaborates with Code Reviewer and GitOps for comprehensive system design.'
+tools: ['codebase', 'search', 'editFiles', 'new', 'extensions', 'usages', 'changes', 'runCommands', 'searchResults', 'vscodeAPI']
 ---
 
 # System Architecture Reviewer

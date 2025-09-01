@@ -1,105 +1,198 @@
 # Claude Code Instructions - Engineering Team Agents
 
-## Self-Adaptive Multi-Agent System
-**IMPORTANT**: These agents automatically adapt to your project. When first activated, analyze the codebase to understand domain, technology stack, architecture patterns, and business requirements. Customize all agent guidance accordingly.
+## Collaborative Multi-Agent Development System
 
-This project uses enterprise-grade engineering team agents accessible via the Task tool that provide domain-specific expertise on code quality, architecture, product decisions, UX design, and DevOps practices.
+This project provides a specialized team of engineering agents that work together to ensure **reliable, maintainable, and business-aligned code**. Each agent creates persistent documentation and collaborates with team members to deliver enterprise-grade solutions.
 
-## Critical Development Principles
+## 🎯 Core Mission: Build the Right Thing, Build It Right
 
-### Token Optimization
-- **Problem**: Large instruction files cause excessive token consumption
-- **Solution**: Keep instructions focused and reference external documentation
-- **Best Practice**: Use file references instead of inline code examples
+**Every feature request follows this collaborative workflow:**
+1. **Product Manager** clarifies user needs and business value
+2. **UX Designer** maps user journeys and validates workflows  
+3. **Architecture** ensures scalable, secure system design
+4. **Code Reviewer** validates implementation quality and security
+5. **Responsible AI** prevents bias and ensures accessibility
+6. **GitOps** optimizes deployment and operational excellence
 
-### Context Management
-- **Problem**: Context loss during long development sessions leads to conflicting changes
-- **Solution**: Use regular checkpoints, explicit context anchoring, focused work sessions
-- **Recommendation**: Keep development sessions to 2-3 hours with clear context breaks
+**All agents create persistent documentation** in a structured `docs/` folder system for knowledge continuity.
 
-### Circular Debugging Prevention
-- **Problem**: AI repeats failed solutions in endless loops
-- **Solution**: Track attempted fixes, detect patterns, request human intervention when needed
-- **Human Role**: Provide strategic direction and pragmatic guidance when loops are detected
+## ⚡ Agent-First Development Workflow
 
-## Available Engineering Team Agents
+### 🔍 ALWAYS Start Here (Question-First Approach)
+**Before writing any code, use these agents to clarify requirements:**
 
-Use the Task tool with these subagent_type values:
+```
+Use product-manager-advisor to ask:
+- Who exactly will use this feature?
+- What specific problem does it solve?  
+- How will we measure success?
+```
 
-### Core Development Agents
-- **`code-reviewer`**: Reviews code for quality, patterns, security, and best practices
-- **`system-architecture-reviewer`**: Validates architectural decisions and system design
-- **`product-manager-advisor`**: Helps create requirements and align business value
-- **`ux-ui-designer`**: Reviews user experience and interface design
-- **`gitops-ci-specialist`**: Optimizes CI/CD workflows and deployment processes
+**Why**: Prevents building features nobody needs or uses.
+
+### 🏗️ Design Phase (Architecture & UX)
+**For any new feature or system change:**
+
+```
+1. Use system-architecture-reviewer to validate:
+   - Does this fit our current architecture?
+   - Any security or scalability risks?
+   - Should we create an ADR for this decision?
+
+2. Use ux-ui-designer for user-facing changes:
+   - Map current vs future user journey
+   - Identify accessibility requirements
+   - Validate workflow with real user scenarios
+```
+
+**Output**: Architecture Decision Records (ADRs) and User Journey Maps saved to `docs/`
+
+### 💻 Implementation Phase (Quality-First Development)
+**Write code following project patterns, then immediately validate:**
+
+```
+1. Use responsible-ai-code for any user-facing or AI features:
+   - Test with diverse user inputs (names, ages, contexts)
+   - Ensure keyboard accessibility and screen reader support
+   - Validate privacy and data collection practices
+
+2. Use code-reviewer after writing significant code:
+   - Security vulnerabilities (SQL injection, XSS, auth)
+   - Reliability issues (timeouts, error handling)
+   - Performance bottlenecks (for >1000 user systems)
+```
+
+**Output**: Code Review Reports with specific fixes and implementation recommendations
+
+### 🚀 Deployment Phase (Operational Excellence)
+**Before deploying to production:**
+
+```
+Use gitops-ci-specialist to optimize:
+- CI/CD pipeline efficiency and reliability
+- Deployment automation and rollback strategies  
+- Monitoring and observability implementation
+```
+
+**Result**: Reliable deployments with proper monitoring and quick recovery capabilities
+
+## 🤝 Available Engineering Team Agents
+
+### Core Development Team
+- **`product-manager-advisor`** 📊
+  - Creates product requirements and GitHub issues
+  - Validates business value and user alignment
+  - Partners with UX for user journey mapping
+  - **Documents**: Requirements, user stories, business context
+
+- **`ux-ui-designer`** 🎨  
+  - Maps user journeys and validates workflows
+  - Ensures accessibility and inclusive design
+  - Reviews interfaces for usability issues
+  - **Documents**: User journey maps, UX design reports
+
+- **`system-architecture-reviewer`** 🏛️
+  - Validates architectural decisions and system design
+  - Creates Architecture Decision Records (ADRs)
+  - Ensures scalability and security compliance
+  - **Documents**: ADRs, system design decisions
+
+- **`code-reviewer`** 🔍
+  - Reviews code for security, reliability, performance
+  - Provides specific code fixes and improvements
+  - Validates implementation against best practices
+  - **Documents**: Code review reports with actionable fixes
+
+- **`responsible-ai-code`** 🌍
+  - Prevents bias and ensures accessibility compliance
+  - Creates Responsible AI ADRs for ethical decisions
+  - Tests with diverse user scenarios and edge cases
+  - **Documents**: RAI-ADRs, evolution logs, compliance reports
+
+- **`gitops-ci-specialist`** 🚀
+  - Optimizes CI/CD workflows and deployment processes
+  - Implements monitoring and operational excellence
+  - Automates deployment and rollback strategies
+  - **Documents**: Deployment guides, operational runbooks
 
 ### Coordination Agent
-- **`sync-coordinator`**: Synchronizes instruction files across multiple IDE platforms (optional)
+- **`sync-coordinator`**: Synchronizes instruction files across IDE platforms (optional)
 
-## Agent Usage Patterns
+## 🔄 Team Collaboration Patterns
 
-### Before Implementation
-1. **Requirements Planning**: Use `product-manager-advisor` to clarify user needs and business value
-2. **Architecture Design**: Use `system-architecture-reviewer` to validate system design
-3. **UX Planning**: Use `ux-ui-designer` for user-facing components
+### Agent-to-Agent Handoffs
+Agents actively collaborate and delegate to specialists:
 
-### During Development
-1. **Write Code**: Follow discovered project patterns and conventions
-2. **Quality Validation**: Run project-specific quality checks (auto-detected tools)
-3. **Code Review**: Use `code-reviewer` for expert feedback
-4. **Integration**: Ensure changes integrate well with existing codebase
+```
+Product Manager → UX Designer: "Can you map the user journey for this workflow?"
+UX Designer → Responsible AI: "Any accessibility barriers with this interface?"
+Architecture → Code Reviewer: "Security implications of this design decision?"
+Code Reviewer → GitOps: "Any deployment concerns with this implementation?"
+```
 
-### Before Deployment
-1. **Pipeline Validation**: Use `gitops-ci-specialist` to optimize deployment process
-2. **Quality Gates**: Ensure all automated checks pass
-3. **Documentation**: Update relevant documentation
-4. **Monitoring**: Implement appropriate observability for changes
+### Human Escalation Triggers
+Agents escalate to humans when:
+- **Business vs technical tradeoffs** require strategic decisions
+- **Budget/timeline implications** need stakeholder input  
+- **Legal/compliance clarity** requires domain expertise
+- **Complex user research** needs direct user validation
 
-## Auto-Discovery Process
+## 📁 Documentation System
 
-**When first activated, agents will**:
+### Structured Knowledge Preservation
+All agents create persistent documentation in organized folders:
 
-### Domain Knowledge Discovery
-- **Business Context**: Analyze README, documentation, code comments to understand domain
-- **User Personas**: Identify target users from UI patterns, API endpoints, user flows
-- **Key Workflows**: Map business processes from service architectures and data flows
-- **Success Metrics**: Discover KPIs from analytics code, monitoring, and business logic
+```
+docs/
+├── architecture/          # ADRs and system design decisions
+├── product/              # Requirements and user stories  
+├── ux/                   # User journeys and design reports
+├── code-review/          # Code review reports and fixes
+├── responsible-ai/       # RAI-ADRs and compliance tracking
+├── gitops/              # Deployment and operational guides
+└── templates/           # Consistent documentation templates
+```
 
-### Technical Stack Analysis
-- **Languages**: Scan project files to identify primary and secondary languages
-- **Frameworks**: Detect frameworks from package.json, requirements.txt, dependencies
-- **Infrastructure**: Identify deployment patterns from config files, Docker, CI/CD
-- **Tools**: Discover development tools from config files, scripts, and workflow files
+### Living Documentation
+- **Updates automatically** when business requirements change
+- **Maintains decision context** for future team members
+- **Tracks evolution** of practices and patterns over time
+- **Enables knowledge continuity** across team changes
 
-### Quality Standards Detection
-- **Test Coverage**: Analyze existing test patterns and coverage configuration
-- **Performance**: Identify performance standards from monitoring, SLA definitions
-- **Security**: Discover security requirements from existing security implementations
-- **Compliance**: Detect regulatory needs from code patterns and documentation
+## 🚦 Quality Gates & Deployment Readiness
 
-## Multi-Agent Coordination
+### Pre-Deployment Checklist
+Before any production deployment, ensure:
 
-### Agent Orchestration Patterns
-- **Sequential Processing**: Pass context between agents for complex decisions
-- **Parallel Analysis**: Use multiple agents simultaneously for comprehensive review
-- **Hybrid Workflows**: Combine sequential and parallel patterns as needed
-- **Context Preservation**: Maintain context across multi-agent interactions
+- [ ] **Product Manager**: Requirements validated with clear success metrics
+- [ ] **UX Designer**: User journey tested and accessible to all users
+- [ ] **Architecture**: System design documented in ADRs, scalability validated
+- [ ] **Code Reviewer**: Security vulnerabilities resolved, reliability confirmed
+- [ ] **Responsible AI**: Bias testing completed, accessibility compliance verified
+- [ ] **GitOps**: Deployment pipeline tested, monitoring implemented
 
-### Best Practices for Multi-Agent Usage
-1. **Start with Planning Agents**: Use product-manager-advisor and system-architecture-reviewer first
-2. **Implement with Quality Focus**: Use code-reviewer and ux-ui-designer during development
-3. **Deploy with Confidence**: Use gitops-ci-specialist for deployment optimization
-4. **Iterate and Improve**: Continuously refine agent guidance based on project evolution
+### Continuous Quality Improvement
+- Agents learn from each project iteration
+- Documentation patterns evolve based on team needs
+- Collaboration workflows optimize over time
+- Enterprise patterns automatically adapt to project complexity
 
-## Agent Development Best Practices
-- **Token Optimization**: Concise instructions, file references over inline content
-- **Context Management**: Preserve context, avoid circular reasoning loops
-- **Error Handling**: Graceful degradation with human escalation triggers
-- **Feedback Integration**: Learn from interactions, continuous improvement
-- **Structured Output**: Consistent response formats, actionable recommendations
-- **Safety Guardrails**: Appropriate response boundaries, content filtering
+## ⚙️ Setup Requirements
 
-## Enterprise Patterns Integration
-All agents are trained on enterprise patterns including: SOLID principles, security-first development, operational excellence, compliance frameworks, and domain-driven design. They automatically apply appropriate patterns based on discovered project complexity and requirements.
+### Documentation Folder Structure
+**Important**: Each agent assumes a `docs/` folder structure exists in your project root. 
 
-Remember: These agents enhance your development process through intelligent, context-aware guidance. Use them proactively to improve code quality, architectural decisions, and user experience outcomes.
+**To customize document locations:**
+1. Edit the relevant agent files in `.claude/agents/` 
+2. Update the `docs/[folder]/` paths to your preferred locations
+3. Ensure templates exist in your specified template folder
+
+**Default folder structure will be created automatically** when agents first run.
+
+### Getting Started
+1. **Ask questions first**: Use `product-manager-advisor` before writing code
+2. **Design before building**: Validate with `ux-ui-designer` and `system-architecture-reviewer`
+3. **Review everything**: Use `code-reviewer` and `responsible-ai-code` for quality
+4. **Deploy confidently**: Use `gitops-ci-specialist` for operational excellence
+
+**Remember**: These agents work as a team to ensure every feature is user-focused, well-architected, secure, accessible, and reliably deployed. Use them proactively throughout your development process.

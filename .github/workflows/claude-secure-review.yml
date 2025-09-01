@@ -1,0 +1,158 @@
+name: Claude Secure Code Review (Owner Only)
+
+on:
+  pull_request:
+    types: [opened, synchronize, labeled]
+  issue_comment:
+    types: [created]
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.auth-check.outputs.allowed }}
+      trigger-type: ${{ steps.auth-check.outputs.trigger-type }}
+    
+    steps:
+      - name: Check Authorization
+        id: auth-check
+        run: |
+          echo "Checking authorization for Claude agent access..."
+          
+          # Get repository owner
+          REPO_OWNER="${{ github.repository_owner }}"
+          echo "Repository owner: $REPO_OWNER"
+          
+          # Initialize variables
+          ALLOWED="false"
+          TRIGGER_TYPE="none"
+          
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+            echo "PR author: $PR_AUTHOR"
+            
+            # Allow if PR is from repository owner
+            if [[ "$PR_AUTHOR" == "$REPO_OWNER" ]]; then
+              echo "✅ PR from repository owner - ALLOWED"
+              ALLOWED="true"
+              TRIGGER_TYPE="owner-pr"
+            
+            # Check if PR has manual approval label
+            elif echo '${{ toJson(github.event.pull_request.labels.*.name) }}' | grep -q "claude-approved"; then
+              echo "✅ PR has claude-approved label - ALLOWED"
+              ALLOWED="true"
+              TRIGGER_TYPE="manual-approval"
+            
+            else
+              echo "❌ PR from external contributor without approval - BLOCKED"
+              echo "To enable Claude review, repository owner must add 'claude-approved' label"
+            fi
+          
+          elif [[ "${{ github.event_name }}" == "issue_comment" ]]; then
+            COMMENT_AUTHOR="${{ github.event.comment.user.login }}"
+            echo "Comment author: $COMMENT_AUTHOR"
+            
+            # Only allow manual trigger commands from repository owner
+            if [[ "$COMMENT_AUTHOR" == "$REPO_OWNER" ]] && echo "${{ github.event.comment.body }}" | grep -q "/claude-review"; then
+              echo "✅ Manual trigger from repository owner - ALLOWED"
+              ALLOWED="true"
+              TRIGGER_TYPE="manual-command"
+            else
+              echo "❌ Comment trigger not from repository owner - BLOCKED"
+            fi
+          fi
+          
+          echo "allowed=$ALLOWED" >> $GITHUB_OUTPUT
+          echo "trigger-type=$TRIGGER_TYPE" >> $GITHUB_OUTPUT
+
+  claude-review:
+    needs: security-check
+    if: needs.security-check.outputs.allowed == 'true'
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    
+    steps:
+      - name: Security Notice
+        run: |
+          echo "🔒 SECURITY: Claude agent access granted"
+          echo "Trigger type: ${{ needs.security-check.outputs.trigger-type }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Event: ${{ github.event_name }}"
+          
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "PR #${{ github.event.pull_request.number }} by ${{ github.event.pull_request.user.login }}"
+          elif [[ "${{ github.event_name }}" == "issue_comment" ]]; then
+            echo "Manual trigger by ${{ github.event.comment.user.login }}"
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Review
+        id: claude-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            🤖 **Authorized Claude Agent Review** 🤖
+            
+            You are part of a collaborative engineering team. Use the specialized agents in this repository to provide comprehensive review:
+            
+            **Review Focus Areas:**
+            1. **Business Value**: Does this solve a real user need?
+            2. **Architecture**: Use system-architecture-reviewer for design decisions
+            3. **Security**: Use code-reviewer for security vulnerabilities  
+            4. **Accessibility**: Use responsible-ai-code for WCAG compliance
+            5. **User Experience**: Use ux-ui-designer for usability validation
+            6. **Quality**: Use quality gates from our enterprise standards
+            
+            **Instructions:**
+            - Follow the collaborative patterns in CLAUDE.md
+            - Create any necessary documentation (ADRs, review reports)
+            - Escalate strategic business decisions to humans
+            - Use `gh pr comment` to leave detailed, actionable feedback
+            
+            **Security Note**: This review was authorized by repository owner.
+          
+          claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"'
+
+  security-notification:
+    needs: security-check
+    if: needs.security-check.outputs.allowed == 'false'
+    runs-on: ubuntu-latest
+    
+    permissions:
+      pull-requests: write
+      issues: write
+    
+    steps:
+      - name: Post Security Notice
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const message = `🔒 **Claude Agent Access Restricted**
+            
+            Claude code review is restricted to repository owner for security.
+            
+            **For repository owner (@${{ github.repository_owner }}):**
+            - Your PRs automatically get Claude review
+            - Add \`claude-approved\` label to any PR to enable Claude review  
+            - Comment \`/claude-review\` on any PR to trigger manual review
+            
+            **Security Note**: This prevents unauthorized AI agent access to private code.`;
+            
+            if (context.eventName === 'pull_request') {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body: message
+              });
+            }

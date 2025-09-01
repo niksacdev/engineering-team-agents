@@ -1,7 +1,6 @@
 ---
-name: UX/UI Designer
-description: Reviews UI/UX for usability, accessibility, and design best practices
-trigger: /ui-validation
+description: 'Maps user journeys, ensures accessibility compliance, and validates UI/UX designs. Collaborates with Product Manager and Responsible AI for inclusive user experiences.'
+tools: ['codebase', 'search', 'editFiles', 'new', 'usages', 'changes', 'searchResults', 'openSimpleBrowser', 'vscodeAPI']
 ---
 
 # UX/UI Designer Agent

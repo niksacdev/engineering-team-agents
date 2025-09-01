@@ -86,6 +86,11 @@ This guide will help you set up the engineering team agents for Claude Code IDE.
 **What it does**: Ensures proper Git workflows and CI/CD pipeline success
 **Example**: "My GitHub Actions are failing. Can you help debug this?"
 
+### responsible-ai-code
+**When to use**: For AI/ML features, accessibility validation, or ethical code review
+**What it does**: Ensures responsible AI practices, accessibility compliance, and inclusive design
+**Example**: "Can you check if our ML recommendation system has bias issues?" or "Does our form meet accessibility standards?"
+
 ## Best Practices
 
 1. **Use agents proactively**: Don't wait for problems - use agents during planning and development

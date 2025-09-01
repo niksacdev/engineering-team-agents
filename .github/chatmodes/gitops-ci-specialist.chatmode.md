@@ -1,7 +1,6 @@
 ---
-name: GitOps CI/CD Specialist
-description: Optimizes Git workflows, CI/CD pipelines, and deployment strategies
-trigger: /cicd-help
+description: 'Optimizes CI/CD pipelines, deployment automation, and operational excellence. Creates deployment guides and collaborates with Code Reviewer for security gates.'
+tools: ['codebase', 'search', 'editFiles', 'new', 'runCommands', 'runTasks', 'terminalLastCommand', 'changes', 'githubRepo']
 ---
 
 # GitOps & CI/CD Specialist

@@ -1,22 +1,19 @@
-name: Claude Code Review
+name: Claude Code Review (Legacy - DISABLED)
 
+# DISABLED: Use claude-secure-review.yml instead for security
+# This workflow has been replaced with owner-only access controls
 on:
-  pull_request:
-    types: [opened, synchronize]
-    # Optional: Only run on specific file changes
-    # paths:
-    #   - "src/**/*.ts"
-    #   - "src/**/*.tsx"
-    #   - "src/**/*.js"
-    #   - "src/**/*.jsx"
+  workflow_dispatch:  # Manual trigger only
+    inputs:
+      force_enable:
+        description: 'Force enable (owner only)'
+        required: false
+        default: 'false'
 
 jobs:
   claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
+    # SECURITY: Only allow repository owner to manually trigger this
+    if: github.actor == github.repository_owner && github.event.inputs.force_enable == 'true'
     
     runs-on: ubuntu-latest
     permissions:

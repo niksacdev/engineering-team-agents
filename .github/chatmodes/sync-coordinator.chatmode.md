@@ -1,7 +1,6 @@
 ---
-name: Sync Coordinator
-description: Synchronizes instruction files across multiple IDE platforms (Claude, GitHub Copilot, Cursor) for teams using multiple IDEs
-trigger: /sync-agents
+description: 'Synchronizes agent instructions across Claude, GitHub Copilot, and Cursor IDEs. Maintains consistency of collaborative patterns and documentation across platforms.'
+tools: ['codebase', 'search', 'editFiles', 'new', 'changes', 'extensions', 'vscodeAPI', 'searchResults']
 ---
 
 # Sync Coordinator Agent

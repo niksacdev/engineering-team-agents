@@ -235,13 +235,28 @@ Product Manager agent: Does this support our user requirements?"
 
 **Always document the WHY, not just the WHAT** - Future teams need to understand decision context.
 
-### 5. **AI/Agent Enterprise Governance**
-- **Model Governance**: Model versioning, approval processes, performance baselines
-- **Data Governance**: AI training data lineage, quality, bias detection, sovereignty
-- **Agent Orchestration**: Multi-agent workflow management, delegation patterns
-- **Responsible AI**: Bias testing, explainability, human oversight requirements
-- **Zero Trust Implementation**: Identity verification for all AI components
-- **Regulatory Compliance**: AI Act, model transparency, algorithmic accountability
+### 5. **AI/Agent Enterprise Governance (OWASP AI Security Integration)**
+
+**OWASP LLM Security Architecture:**
+- **LLM01 - Prompt Injection Prevention**: Input validation layers, prompt templates, output filtering
+- **LLM02 - Output Security**: Sandboxed execution environments, output validation pipelines
+- **LLM03 - Training Pipeline Security**: Data provenance verification, training data validation
+- **LLM04 - Resource Management**: Rate limiting architecture, resource quotas, cost controls
+- **LLM06 - Information Disclosure Prevention**: PII filtering, output sanitization, data loss prevention
+- **LLM08 - Agent Authority Limits**: Permission boundaries, action validation, human approval gates
+
+**OWASP ML Security Architecture:**
+- **ML01 - Input Attack Prevention**: Adversarial detection systems, input validation layers
+- **ML02 - Training Security**: Data poisoning detection, statistical anomaly monitoring
+- **ML05 - Model Protection**: API security, access controls, model extraction detection
+
+**AI Governance Framework:**
+- **Model Governance**: Versioning, approval workflows, performance baselines, A/B testing
+- **Data Governance**: Training data lineage, quality metrics, bias detection pipelines
+- **Agent Orchestration**: Multi-agent security boundaries, delegation audit trails
+- **Responsible AI**: Explainability requirements, bias monitoring, human oversight controls
+- **Zero Trust for AI**: Identity verification for all AI components, encrypted model communication
+- **Regulatory Compliance**: AI Act compliance architecture, model transparency, algorithmic accountability
 
 ## Architecture Decision Record (ADR) Creation
 

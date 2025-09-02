@@ -33,7 +33,47 @@ Prevent architecture decisions that cause 3AM pages. Design for what you actuall
   - $100-1K/month → Cloud with some optimization
   - >$1K/month → Full cloud architecture options
 
-## Step 2: Decision Trees (Not Technology Lists)
+## Step 2: Microsoft Well-Architected Framework for AI
+
+**For AI/Agent Systems, apply these pillars:**
+
+### **Reliability (AI-Specific)**
+- **Model Fallbacks**: Primary model fails → Fallback to simpler model or cached responses
+- **Non-Deterministic Handling**: Implement retry logic with different prompts/parameters
+- **Agent Orchestration**: Multi-agent failures → Circuit breakers and agent health checks
+- **Data Dependency**: Training/grounding data unavailable → Graceful degradation patterns
+
+### **Security (Microsoft Zero Trust for AI)**
+- **Never Trust, Always Verify**: Authenticate every AI agent, user, and device request
+- **Assume Breach**: Design AI systems expecting compromise, limit blast radius
+- **Least Privilege Access**: AI agents access only required data/services with time-bound permissions
+- **Verify Explicitly**: Multi-factor authentication for AI system access, device compliance
+- **Model Protection**: Secure model endpoints, prevent prompt injection, implement model versioning
+- **Data Classification**: Classify AI training/grounding data by sensitivity (Public, Internal, Confidential, Restricted)
+- **Microsegmentation**: Isolate AI workloads with network segmentation and micro-perimeters
+- **Conditional Access**: Context-aware policies based on user, device, location, and behavior
+- **Continuous Monitoring**: Real-time threat detection across all AI components
+- **Encryption Everywhere**: Data at rest, in transit, and in use (confidential computing for AI models)
+
+### **Cost Optimization (AI-Aware)**
+- **Model Right-Sizing**: Use smallest model that meets accuracy requirements
+- **Compute Optimization**: Scale AI compute based on demand patterns
+- **Data Efficiency**: Optimize training/inference data pipeline costs
+- **Caching Strategies**: Cache expensive AI operations and responses
+
+### **Operational Excellence (MLOps/GenAIOps)**
+- **Model Monitoring**: Track model performance, drift, and bias
+- **Automated Testing**: Continuous evaluation of AI model outputs
+- **Version Control**: Model versioning and deployment pipelines
+- **Observability**: End-to-end tracing for multi-agent interactions
+
+### **Performance Efficiency (AI Workloads)**
+- **Model Latency**: Optimize inference speed vs accuracy trade-offs
+- **Horizontal Scaling**: Auto-scale AI compute based on request volume
+- **Data Pipeline**: Optimize training/grounding data processing
+- **Multi-Agent Load Balancing**: Distribute agent workloads effectively
+
+## Step 3: Decision Trees (Technology Choices)
 
 ### **Database Choice Decision:**
 ```
@@ -41,6 +81,14 @@ High writes, simple queries → Document DB (MongoDB)
 Complex queries, transactions → Relational DB (PostgreSQL)
 High reads, rare writes → Read replicas + caching
 Real-time updates needed → Add WebSockets/Server-Sent Events
+```
+
+### **AI/Agent Architecture Decision Tree:**
+```
+Simple AI features → Managed AI services (Azure OpenAI, AWS Bedrock)
+Multi-agent systems → Event-driven architecture with orchestration
+Knowledge grounding → Vector databases + retrieval patterns
+Real-time AI → Streaming architecture with model caching
 ```
 
 ### **Deployment Architecture Decision:**
@@ -187,12 +235,13 @@ Product Manager agent: Does this support our user requirements?"
 
 **Always document the WHY, not just the WHAT** - Future teams need to understand decision context.
 
-### 5. **Enterprise Compliance & Governance**
-- **Data Governance**: Data lineage, quality, retention policies, sovereignty
-- **Regulatory Compliance**: Industry-specific requirements and architectural implications
-- **Change Management**: Architecture evolution, version management, migration strategies
-- **Documentation Standards**: Architecture diagrams, decision records, runbooks
-- **Risk Assessment**: Technical risk evaluation, mitigation strategies
+### 5. **AI/Agent Enterprise Governance**
+- **Model Governance**: Model versioning, approval processes, performance baselines
+- **Data Governance**: AI training data lineage, quality, bias detection, sovereignty
+- **Agent Orchestration**: Multi-agent workflow management, delegation patterns
+- **Responsible AI**: Bias testing, explainability, human oversight requirements
+- **Zero Trust Implementation**: Identity verification for all AI components
+- **Regulatory Compliance**: AI Act, model transparency, algorithmic accountability
 
 ## Architecture Decision Record (ADR) Creation
 

@@ -4,14 +4,14 @@ Thank you for your interest in contributing to the Engineering Team Agents proje
 
 ## 🌟 About This Project
 
-Engineering Team Agents is a template repository that provides specialized AI agents for different engineering roles. The agents work with Claude Code, GitHub Copilot, and Cursor IDE to provide domain-specific expertise on code quality, architecture, product decisions, UX design, and DevOps practices.
+Engineering Team Agents is a template repository that provides specialized AI agents for different engineering roles. The agents work with Claude Code, GitHub Copilot, and use universal AGENTS.md format for other AI tools to provide domain-specific expertise on code quality, architecture, product decisions, UX design, and DevOps practices.
 
 ## 🤝 Ways to Contribute
 
 ### 1. Agent Improvements
 - **Enhance Existing Agents**: Improve agent instructions, add new expertise areas, or refine existing guidance
 - **Create New Agents**: Develop specialized agents for specific domains (e.g., mobile development, data science, security)
-- **Cross-Platform Consistency**: Ensure agents work consistently across Claude Code, GitHub Copilot, and Cursor
+- **Cross-Platform Consistency**: Ensure agents work consistently across Claude Code, GitHub Copilot, and AGENTS.md format
 
 ### 2. Documentation
 - **Setup Guides**: Improve platform-specific setup instructions
@@ -33,7 +33,7 @@ Engineering Team Agents is a template repository that provides specialized AI ag
 
 ### Prerequisites
 - Git and basic Git workflow knowledge
-- Familiarity with at least one of the supported platforms (Claude Code, GitHub Copilot, or Cursor)
+- Familiarity with at least one of the supported platforms (Claude Code, GitHub Copilot, or AGENTS.md format)
 - Understanding of software engineering practices and AI-assisted development
 
 ### Development Setup

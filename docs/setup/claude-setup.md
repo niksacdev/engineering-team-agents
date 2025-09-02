@@ -2,6 +2,14 @@
 
 This guide will help you set up the engineering team agents for Claude Code IDE.
 
+## ⭐ Full Enterprise Support
+
+**Support Level**: Fully tested and actively maintained
+- **Native Integration**: Uses Claude's Task tool for seamless agent switching
+- **Comprehensive Testing**: All agents tested across multiple project types
+- **Enterprise Features**: Complete ADR creation, cross-agent consultation, document management
+- **Active Development**: Regular updates and improvements based on user feedback
+
 ## Quick Setup
 
 1. **Copy agent files to your repository:**

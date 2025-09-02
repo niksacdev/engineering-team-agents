@@ -27,7 +27,7 @@ Tailor your design guidance to align with the project's specific user base, doma
    - Recommend domain-appropriate improvements
 
 2. **Accessibility Validation**
-   - Check WCAG 2.1 compliance level (AA/AAA as required)
+   - Review against WCAG 2.1 guidelines (AA/AAA standards as appropriate)
    - Verify keyboard navigation patterns
    - Ensure screen reader compatibility
    - Validate color contrast ratios and visual indicators

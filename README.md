@@ -38,11 +38,18 @@ graph TD
     DEVOPS -.->|Creates| DOCS_D[docs/gitops/<br/>Deployment Guides]
 ```
 
-Leverages underlying tool capabilities such as Claude SubAgents, GitHub Copilot chatmade and Cursor rules
+Leverages Claude SubAgents and GitHub Copilot chatmodes, with universal AGENTS.md format for broad tool compatibility
 
 ## 🏢 Enterprise-Grade Collaborative Agents
 
-**Works across all major IDEs**: [Claude Code](https://claude.ai/code) • [GitHub Copilot](https://github.com/features/copilot) • [Cursor IDE](https://cursor.com)
+**Enterprise-Ready Platforms**: [Claude Code](https://claude.ai/code) • [GitHub Copilot](https://github.com/features/copilot) • Plus universal AGENTS.md support for other AI tools
+
+### 🏆 Enterprise Benefits
+- **Security-First**: Guidance based on OWASP principles and secure coding practices
+- **Audit Trail**: All agent decisions create persistent documentation
+- **Accessibility Focused**: Guidance based on WCAG 2.1 principles and inclusive design
+- **Scalable Patterns**: Architecture guidance for enterprise-scale considerations
+- **Vendor Agnostic**: Works across multiple AI platforms and tools
 
 ### 🔄 Always Question-First Development
 
@@ -50,7 +57,7 @@ Every feature request follows this **collaborative workflow**:
 
 1. **🔍 Product Manager** asks: "What user need does this solve? How do we measure success?"
 2. **🎨 UX Designer** maps user journeys and validates accessibility requirements  
-3. **🏛️ System Architect** ensures scalable design and creates Architecture Decision Records
+3. **🏛️ System Architect** ensures secure, scalable design and creates Architecture Decision Records
 4. **🔍 Code Reviewer** validates security, reliability, and implementation quality
 5. **🌍 Responsible AI** prevents bias and ensures inclusive, accessible design
 6. **🚀 GitOps Specialist** optimizes deployment and operational excellence
@@ -66,7 +73,7 @@ Each agent creates **persistent documentation** and collaborates with teammates:
 |-------|-------------------|---------------------|-------------|
 | **📊 Product Manager** | Clarifies user needs, validates business value | `docs/product/` requirements, GitHub issues | UX Designer for user journeys |
 | **🎨 UX Designer** | Maps user journeys, ensures accessibility | `docs/ux/` user journey maps, design reports | Responsible AI for WCAG compliance |
-| **🏛️ System Architect** | Creates ADRs, validates scalability | `docs/architecture/` ADRs, system designs | Code Reviewer for security review |
+| **🏛️ System Architect** | Creates ADRs, validates security, reliablility, scalability | `docs/architecture/` ADRs, system designs | Code Reviewer for security review |
 | **🔍 Code Reviewer** | Reviews security, quality, performance | `docs/code-review/` detailed review reports | DevOps for deployment concerns |
 | **🌍 Responsible AI** | Prevents bias, ensures accessibility | `docs/responsible-ai/` RAI-ADRs, compliance tracking | UX Designer for accessibility validation |
 | **🚀 GitOps Specialist** | Optimizes CI/CD, deployment reliability | `docs/gitops/` deployment guides, runbooks | Code Reviewer for security gates |
@@ -104,7 +111,7 @@ cd /path/to/your-project
 # Install collaborative agents for your IDE:
 cp -r ../engineering-team-agents/.claude ./           # Claude Code agents
 cp -r ../engineering-team-agents/.github ./          # GitHub Copilot agents  
-cp -r ../engineering-team-agents/.cursor ./          # Cursor IDE agents
+cp ../engineering-team-agents/AGENTS.md ./            # Universal AI tool support
 cp ../engineering-team-agents/claude.md ./           # Collaborative instructions
 ```
 
@@ -123,7 +130,7 @@ cp -r ../engineering-team-agents/docs/templates/* docs/templates/
 ```
 
 **To customize documentation locations:**
-1. Edit agent files in `.claude/agents/`, `.github/chatmodes/`, or `.cursor/rules/`
+1. Edit agent files in `.claude/agents/`, `.github/chatmodes/`, or `AGENTS.md`
 2. Update the `docs/[folder]/` paths to your preferred locations
 3. Ensure templates exist in your specified template directory
 
@@ -131,11 +138,15 @@ cp -r ../engineering-team-agents/docs/templates/* docs/templates/
 
 Each IDE has a collaborative initialization process that customizes agents for YOUR project:
 
-| IDE | Collaborative Setup Guide | Key Features |
-|-----|--------------------------|--------------|
-| **Claude Code** | [Setup Guide](docs/setup/claude-setup.md) | Specialized agents via Task tool, ADR creation, cross-agent consultation |
-| **GitHub Copilot** | [Setup Guide](docs/setup/github-copilot-setup.md) | Collaborative chatmodes, team handoffs, persistent documentation |
-| **Cursor IDE** | [Setup Guide](docs/setup/cursor-setup.md) | Context-aware rules, automatic enterprise guidance, semantic file patterns |
+| Platform | Support Level | Setup Guide | Key Features |
+|----------|---------------|-------------|-------------|
+| **Claude Code** | ⭐ Full | [Setup Guide](docs/setup/claude-setup.md) | Specialized agents via Task tool, ADR creation, cross-agent consultation |
+| **GitHub Copilot** | ⭐ Full | [Setup Guide](docs/setup/github-copilot-setup.md) | Collaborative chatmodes, team handoffs, persistent documentation |
+| **Other AI Tools** | ✅ Basic | [Setup Guide](docs/setup/universal-agents-setup.md) | Universal format for broad tool compatibility (not individually tested) |
+
+**Support Levels Explained:**
+- **⭐ Full Support**: Thoroughly tested, enterprise features, active development, comprehensive documentation
+- **✅ Basic Support**: Universal AGENTS.md format provides basic collaborative patterns but not individually tested per tool
 
 ### 4. Examples
 
@@ -172,6 +183,6 @@ Please see our [Contributing Guide](CONTRIBUTING.md) for detailed information.
 
 - [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
 - [GitHub Copilot Chat Modes](https://github.com/github/awesome-copilot/tree/main/chatmodes)
-- [Cursor IDE Rules Documentation](https://docs.cursor.com)
+- [AGENTS.md Specification](https://github.com/openai/agents.md)
 
 ---

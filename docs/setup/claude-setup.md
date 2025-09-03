@@ -29,19 +29,29 @@ This guide will help you set up the engineering team agents for Claude Code IDE.
    Copy and paste this prompt into Claude Code:
    
    ```
-   I've just installed engineering team agents in my repository. Please analyze my codebase and customize these agents to become domain experts for my project.
+   I've just installed engineering team agents in my repository. Please help me set them up to work with my specific project context.
    
-   **You have permission to modify the agent instruction files** - please update them with my project's domain knowledge, technology stack, and business context.
-   
-   **What to do:**
+   **Setup Approach**:
    1. **Discover**: Check what agent files I have (.claude/agents/ directory and claude.md)
-   2. **Analyze**: Understand my project's domain, tech stack, architecture, and business logic  
-   3. **Customize**: Update the agent files with my specific project context
-   4. **Test**: Try one agent on a real file from my codebase to confirm it works
+   2. **Analyze Repository Context**: Read my README.md, package.json, docs/, and any existing architecture documentation to understand:
+      - Project domain and business context
+      - Technology stack and frameworks
+      - Existing documentation structure
+      - User types and business goals
+   3. **Use Repository Links**: When agents need domain knowledge, provide **file paths and links** to repository documentation instead of copying content:
+      - "See README.md for project overview"
+      - "Business context in docs/business*.md"
+      - "Architecture decisions in docs/architecture/"
+      - "User personas in docs/product/user-personas.md"
+   4. **Fill Documentation Gaps**: If business context is missing, use the product-manager-advisor agent to help me create:
+      - docs/product/business-context.md
+      - docs/architecture/tech-stack-overview.md  
+      - User personas and success metrics
+   5. **Test**: Try one agent on a real file from my codebase to confirm it works with the discovered context
    
-   **My project**: [Describe your project briefly - e.g., "E-commerce platform with React frontend and Node.js backend for small businesses"]
+   **My project**: [Brief description - e.g., "E-commerce platform with React frontend and Node.js backend for small businesses"]
    
-   Replace generic template content with my project-specific knowledge so the agents understand my domain and can give relevant advice.
+   **🎯 Token Optimization Goal**: Agents understand my domain through **repository links and file references**, not duplicated content in agent files. This keeps agent instructions lean while providing access to comprehensive project knowledge.
    ```
 
 3. **Start using your customized agents:**

@@ -100,7 +100,13 @@ Document sync operations with: source/target platforms, changes made, synchroniz
 
 ## Best Practices for Multi-Platform Teams
 
-### 1. **Choose Sync Strategy**
+### 1. **Token Optimization Strategy**
+- **Use Repository Links**: Reference docs/product/, docs/architecture/, README.md instead of duplicating content
+- **File Path References**: "See docs/architecture/ADR-001.md" not copied ADR content
+- **Lean Agent Instructions**: Keep platform-specific files focused on behavior, not domain knowledge
+- **Growing Knowledge Base**: Build comprehensive docs/ that all platforms reference
+
+### 2. **Choose Sync Strategy**
 - **Full Sync**: Maintain identical capabilities across all platforms
 - **Core Sync**: Sync enterprise features, allow platform-specific optimizations
 - **Selective Sync**: Sync only critical updates, maintain platform independence

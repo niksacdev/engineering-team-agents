@@ -53,14 +53,16 @@ mkdir -p docs/{product,architecture,code-review,ux,responsible-ai,gitops,templat
 cp -r ../engineering-team-agents/docs/templates/* docs/templates/
 ```
 
-### 4. Test Agent Collaboration
+### 4. Test Agent Collaboration with Repository Context
 
-Start with a simple request to test collaborative patterns:
+Start with a request that tests both collaborative patterns and repository understanding:
 
 ```
-I want to add a user registration feature. Please use the collaborative engineering approach described in AGENTS.md to help me think through this properly.
+I want to add a user registration feature. Please use the collaborative engineering approach described in AGENTS.md.
 
-Expected: The AI should follow the question-first approach, asking about users, business value, and collaborating between different specialist roles.
+First, analyze my repository documentation (README.md, docs/, package.json) to understand my project context. When you need domain knowledge, reference repository files by their paths rather than copying content. If business details are missing, take on the Product Manager role to help me create the necessary documentation in docs/product/.
+
+Expected: The AI should use **file path references** ("see README.md for...", "business context in docs/product/...") instead of duplicating content, ask about missing business context, and collaborate between specialist roles while building a token-efficient knowledge system.
 ```
 
 ## 🔧 Compatible AI Tools

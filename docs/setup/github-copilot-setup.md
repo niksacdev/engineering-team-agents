@@ -35,21 +35,32 @@ Instead of isolated AI responses, you get agents that:
    ```
    🤝 INITIALIZE COLLABORATIVE ENGINEERING TEAM
    
-   I've installed collaborative engineering agents that work as a team. Please analyze my codebase and customize these agents to become domain experts who collaborate on my project.
+   I've installed collaborative engineering agents that work as a team. Please help me set them up to work with my specific project context through documentation reference, not agent file modification.
    
    **Team Mission**: Ensure every feature is user-focused, well-architected, secure, accessible, and reliably deployed.
    
-   **Your Tasks:**
+   **Setup Approach:**
    1. **Discover**: Scan .github/chatmodes/ and .github/instructions/ directories
-   2. **Analyze**: Understand my project's domain, business goals, users, and tech stack
-   3. **Customize**: Update agents with project-specific knowledge and collaboration patterns
-   4. **Create Documentation**: Set up docs/ folder structure for persistent knowledge
-   5. **Test Collaboration**: Demonstrate agents working together on a real feature
+   2. **Analyze Repository**: Read my README.md, package.json, docs/, and existing documentation to understand:
+      - Project domain and business context
+      - Technology stack and architecture
+      - User types and business goals
+      - Existing documentation structure
+   3. **Use Repository Links**: When chatmodes need domain knowledge, provide **file paths and repository links** instead of copying content:
+      - "Project overview: README.md"
+      - "Business goals: docs/product/business-context.md"
+      - "Tech decisions: docs/architecture/"
+      - "User journeys: docs/ux/user-personas.md"
+   4. **Fill Documentation Gaps**: If business context is missing, use /product-manager to help create:
+      - docs/product/business-context.md
+      - docs/architecture/system-overview.md
+      - User personas and success metrics documentation
+   5. **Test Collaboration**: Demonstrate agents working together using discovered/created documentation
    
-   **My Project Context**: [Describe your project: domain, users, tech stack, business goals]
+   **My Project Context**: [Brief description: domain, users, tech stack, business goals]
    Example: "Healthcare scheduling platform with React frontend, Node.js backend, serves small medical practices, focus on patient privacy and accessibility"
    
-   **Expected Outcome**: Agents that understand my domain and actively collaborate with each other while creating persistent documentation.
+   **🎯 Token Optimization Goal**: Agents understand my domain through **repository file references and links**, creating a lean knowledge system that scales without token bloat.
    ```
 
 3. **Experience collaborative engineering in action:**

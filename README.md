@@ -1,7 +1,4 @@
 # 🤝 Collaborative Engineering Team Agents
-
-Transform your IDE into a **collaborative engineering environment** where specialized agents work together to ensure **reliable, maintainable, and business-aligned code**.
-
 > **Experimental Repository**: The methodologies and opinions expressed herein are those of individual contributors and do not represent any organization's views.
 
 This collaborative agent system was developed based on learnings from experimental multi-agent research documented in:
@@ -136,7 +133,18 @@ cp -r ../engineering-team-agents/docs/templates/* docs/templates/
 
 ### 3. Initialize Your Domain-Specific Team
 
-Each IDE has a collaborative initialization process that customizes agents for YOUR project:
+**🔑 Key Principle**: Agents learn your project through **repository documentation reference**, not hardcoded modifications. This creates a growing knowledge base that evolves with your project.
+
+**🎯 Token Optimization Strategy**: When providing domain knowledge to agents, use **file paths and repository links** instead of copying content:
+```
+✅ "Business context: see docs/product/business-context.md"
+✅ "Architecture decisions: docs/architecture/ADR-001-auth-strategy.md"  
+✅ "User personas: docs/ux/user-personas.md"
+❌ "Our users are small business owners who need...[500 words of copied content]"
+```
+This keeps agent instructions lean while providing comprehensive project knowledge access.
+
+Each IDE has a collaborative initialization process that helps agents understand YOUR project:
 
 | Platform | Support Level | Setup Guide | Key Features |
 |----------|---------------|-------------|-------------|

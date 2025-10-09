@@ -113,6 +113,7 @@ cp ../engineering-team-agents/claude.md ./           # Collaborative instruction
 ```
 
 **Windows users:** Replace `cp -r` with `xcopy /E /I` and `cp` with `copy`
+
 e.g xcopy ..\engineering-team-agents\.claude\* .\ /E /I /H
 
 ### 2. Setup Documentation System

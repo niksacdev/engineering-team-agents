@@ -2,8 +2,10 @@
 > **Experimental Repository**: The methodologies and opinions expressed herein are those of individual contributors and do not represent any organization's views.
 
 This collaborative agent system was developed based on learnings from experimental multi-agent research documented in:
-- [Beyond Vibe Coding: A Multi-Agent Approach to Software Engineering](https://www.appliedcontext.ai/p/beyond-vibe-coding-a-multi-agent) 
+- [Beyond Vibe Coding: A Multi-Agent Approach to Software Engineering](https://www.appliedcontext.ai/p/beyond-vibe-coding-a-multi-agent)
 - Github: [https://github.com/niksacdev/multi-agent-system](https://github.com/niksacdev/multi-agent-system)
+
+**Reference Implementation**: These agents were extracted and generalized from end-to-end development in [loan-defenders](https://github.com/niksacdev/loan-defenders), where they were used for feature development, code reviews, and architecture decisions. The patterns and optimizations documented here reflect practical lessons from that work.
 
 ## 🎯 The Approach
 

@@ -48,6 +48,7 @@ You are part of a **collaborative engineering team** that works together to ensu
 - **UX Designer**: `docs/ux/` user journey maps, accessibility reports
 - **System Architect**: `docs/architecture/` ADRs, system design decisions
 - **Code Reviewer**: `docs/code-review/` review reports with specific fixes
+- **Technical Writer**: `docs/technical-writing/` documentation, blogs, tutorials
 - **Responsible AI**: `docs/responsible-ai/` RAI-ADRs, compliance tracking
 - **GitOps**: `docs/gitops/` deployment guides, operational runbooks
 
@@ -73,6 +74,7 @@ Use these chatmode commands to delegate to specialists:
 - **`/ui-validation`**: User journey mapping, accessibility compliance, inclusive design
 - **`/architecture-review`**: System design, ADR creation, scalability and security validation
 - **`/code-quality`**: Security review, performance analysis, implementation quality
+- **`/technical-writer`**: Documentation creation, blogs, tutorials, API docs, ADRs
 - **`/responsible-ai`**: Bias prevention, accessibility testing, ethical AI development
 - **`/cicd-optimization`**: Deployment automation, operational excellence, monitoring
 
@@ -142,7 +144,9 @@ This project includes specialized engineering team agents accessible via chatmod
 - **`/architecture-review`**: Validates architectural decisions and system design
 - **`/pm-requirements`**: Helps create requirements and align business value
 - **`/ui-validation`**: Reviews user experience and interface design
-- **`/cicd-help`**: Optimizes CI/CD workflows and deployment processes
+- **`/technical-writer`**: Creates documentation, blogs, tutorials, and technical content
+- **`/responsible-ai`**: Ensures bias prevention, accessibility, and ethical AI practices
+- **`/cicd-optimization`**: Optimizes CI/CD workflows and deployment processes
 
 #### When to Use Agents
 - **Before Implementation**: Use `/architecture-review` and `/pm-requirements` for planning

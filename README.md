@@ -2,8 +2,10 @@
 > **Experimental Repository**: The methodologies and opinions expressed herein are those of individual contributors and do not represent any organization's views.
 
 This collaborative agent system was developed based on learnings from experimental multi-agent research documented in:
-- [Beyond Vibe Coding: A Multi-Agent Approach to Software Engineering](https://www.appliedcontext.ai/p/beyond-vibe-coding-a-multi-agent) 
+- [Beyond Vibe Coding: A Multi-Agent Approach to Software Engineering](https://www.appliedcontext.ai/p/beyond-vibe-coding-a-multi-agent)
 - Github: [https://github.com/niksacdev/multi-agent-system](https://github.com/niksacdev/multi-agent-system)
+
+**Reference Implementation**: These agents were extracted and generalized from end-to-end development in [loan-defenders](https://github.com/niksacdev/loan-defenders), where they were used for feature development, code reviews, and architecture decisions. The patterns and optimizations documented here reflect practical lessons from that work.
 
 ## 🎯 The Approach
 
@@ -14,23 +16,26 @@ This collaborative agent system was developed based on learnings from experiment
 
 ```mermaid
 graph TD
-    PM[Product Manager<br/>📊 Requirements & Business Value] 
+    PM[Product Manager<br/>📊 Requirements & Business Value]
     UX[UX Designer<br/>🎨 User Journeys & Accessibility]
     ARCH[System Architect<br/>🏛️ ADRs & System Design]
     CODE[Code Reviewer<br/>🔍 Security & Quality]
+    TECH[Technical Writer<br/>✍️ Documentation & Content]
     AI[Responsible AI<br/>🌍 Bias & Compliance]
     DEVOPS[DevOps Specialist<br/>🚀 Deployment & Operations]
-    
+
     PM -->|"Map user journey for this feature"| UX
     UX -->|"Any accessibility barriers?"| AI
     ARCH -->|"Security implications?"| CODE
     CODE -->|"Deployment concerns?"| DEVOPS
     AI -->|"Business impact assessment"| PM
-    
+    PM -->|"Document this feature"| TECH
+
     PM -.->|Creates| DOCS_P[docs/product/<br/>Requirements & Issues]
     UX -.->|Creates| DOCS_U[docs/ux/<br/>Journey Maps]
     ARCH -.->|Creates| DOCS_A[docs/architecture/<br/>ADRs]
     CODE -.->|Creates| DOCS_C[docs/code-review/<br/>Review Reports]
+    TECH -.->|Creates| DOCS_T[docs/technical-writing/<br/>Guides & Tutorials]
     AI -.->|Creates| DOCS_R[docs/responsible-ai/<br/>RAI-ADRs]
     DEVOPS -.->|Creates| DOCS_D[docs/gitops/<br/>Deployment Guides]
 ```
@@ -47,6 +52,7 @@ Leverages Claude SubAgents and GitHub Copilot chatmodes, with universal AGENTS.m
 - **Accessibility Focused**: Guidance based on WCAG 2.1 principles and inclusive design
 - **Scalable Patterns**: Architecture guidance for enterprise-scale considerations
 - **Vendor Agnostic**: Works across multiple AI platforms and tools
+- **Optimized Performance**: 75% token reduction (300-500 lines per agent) = 10x faster responses (30s → 3s)
 
 ### 🔄 Always Question-First Development
 
@@ -72,6 +78,7 @@ Each agent creates **persistent documentation** and collaborates with teammates:
 | **🎨 UX Designer** | Maps user journeys, ensures accessibility | `docs/ux/` user journey maps, design reports | Responsible AI for WCAG compliance |
 | **🏛️ System Architect** | Creates ADRs, validates security, reliablility, scalability | `docs/architecture/` ADRs, system designs | Code Reviewer for security review |
 | **🔍 Code Reviewer** | Reviews security, quality, performance | `docs/code-review/` detailed review reports | DevOps for deployment concerns |
+| **✍️ Technical Writer** | Creates documentation, blogs, tutorials, API docs | `docs/technical-writing/` documentation, guides | Product Manager for requirements clarity |
 | **🌍 Responsible AI** | Prevents bias, ensures accessibility | `docs/responsible-ai/` RAI-ADRs, compliance tracking | UX Designer for accessibility validation |
 | **🚀 GitOps Specialist** | Optimizes CI/CD, deployment reliability | `docs/gitops/` deployment guides, runbooks | Code Reviewer for security gates |
 
@@ -102,12 +109,12 @@ Feature Request → Product Manager (requirements)
 # Clone the collaborative engineering template
 git clone https://github.com/niksacdev/engineering-team-agents.git
 
-# Navigate to YOUR project repository  
+# Navigate to YOUR project repository
 cd /path/to/your-project
 
 # Install collaborative agents for your IDE:
-cp -r ../engineering-team-agents/.claude ./           # Claude Code agents
-cp -r ../engineering-team-agents/.github ./          # GitHub Copilot agents  
+cp -r ../engineering-team-agents/.claude ./           # Claude Code agents (8 specialized agents)
+cp -r ../engineering-team-agents/.github ./          # GitHub Copilot chatmodes + GitHub-specific agents
 cp ../engineering-team-agents/AGENTS.md ./            # Universal AI tool support
 cp ../engineering-team-agents/claude.md ./           # Collaborative instructions
 ```
@@ -120,9 +127,9 @@ cp ../engineering-team-agents/claude.md ./           # Collaborative instruction
 
 ```bash
 # Create documentation structure (will be auto-populated by agents)
-mkdir -p docs/{product,ux,architecture,code-review,responsible-ai,gitops,templates}
+mkdir -p docs/{product,ux,architecture,code-review,technical-writing,responsible-ai,gitops,templates}
 
-# Copy documentation templates  
+# Copy documentation templates
 cp -r ../engineering-team-agents/docs/templates/* docs/templates/
 ```
 

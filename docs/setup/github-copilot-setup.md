@@ -106,7 +106,7 @@ Each command triggers **team collaboration** and **document creation**:
 - **Documents**: `docs/product/[feature]-requirements.md`, GitHub issues
 - **Example**: `/pm-requirements "Add two-factor authentication for enterprise users"`
 
-### /ui-validation 🎨  
+### /ui-validation 🎨
 **Collaborative Role**: UX Designer + Product Manager + Responsible AI
 - **Creates**: User journey maps, wireframes, accessibility compliance reports
 - **Collaborates with**: Product Manager for business alignment, Responsible AI for WCAG compliance
@@ -114,7 +114,7 @@ Each command triggers **team collaboration** and **document creation**:
 - **Example**: `/ui-validation "Our mobile checkout flow has 60% abandonment rate"`
 
 ### /architecture-review 🏛️
-**Collaborative Role**: Architecture + Code Reviewer + GitOps  
+**Collaborative Role**: Architecture + Code Reviewer + GitOps
 - **Creates**: Architecture Decision Records (ADRs), system design documentation
 - **Collaborates with**: Code Reviewer for security, GitOps for deployment complexity
 - **Documents**: `docs/architecture/ADR-[number]-[title].md`
@@ -127,8 +127,15 @@ Each command triggers **team collaboration** and **document creation**:
 - **Documents**: `docs/code-review/[date]-[component]-review.md`
 - **Example**: `/code-quality "Review this ML recommendation algorithm for bias"`
 
+### /technical-writer ✍️
+**Collaborative Role**: Technical Writer + Product Manager + Architecture
+- **Creates**: Documentation, blogs, tutorials, API docs, technical guides
+- **Collaborates with**: Product Manager for requirements clarity, Architecture for technical accuracy
+- **Documents**: `docs/technical-writing/[topic]-documentation.md`
+- **Example**: `/technical-writer "Create user guide for our API authentication system"`
+
 ### /responsible-ai 🌍
-**Collaborative Role**: Responsible AI + UX Designer + Product Manager  
+**Collaborative Role**: Responsible AI + UX Designer + Product Manager
 - **Creates**: Responsible AI ADRs, bias testing reports, compliance documentation
 - **Collaborates with**: UX for accessibility, Product Manager for user impact assessment
 - **Documents**: `docs/responsible-ai/RAI-ADR-[number]-[title].md`, evolution logs
@@ -149,18 +156,20 @@ Your repository becomes a **collaborative knowledge hub**:
 .github/
 ├── chatmodes/                    # Collaborative agent commands
 │   ├── pm-requirements.chatmode.md
-│   ├── ui-validation.chatmode.md  
+│   ├── ui-validation.chatmode.md
 │   ├── architecture-review.chatmode.md
 │   ├── code-quality.chatmode.md
+│   ├── technical-writer.chatmode.md
 │   ├── responsible-ai.chatmode.md
 │   └── cicd-optimization.chatmode.md
 ├── instructions/
 │   └── copilot-instructions.md   # Team collaboration patterns
 └── docs/                         # Persistent knowledge base
     ├── product/                  # Requirements & user stories
-    ├── ux/                       # User journeys & design reports  
+    ├── ux/                       # User journeys & design reports
     ├── architecture/             # ADRs & system decisions
     ├── code-review/              # Review reports & fixes
+    ├── technical-writing/        # Documentation, blogs, tutorials
     ├── responsible-ai/           # RAI-ADRs & compliance tracking
     ├── gitops/                   # Deployment guides & runbooks
     └── templates/                # Documentation templates

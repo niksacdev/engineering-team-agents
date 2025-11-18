@@ -99,15 +99,20 @@ This guide will help you set up the engineering team agents for Claude Code IDE.
 **What it does**: Validates user experience and interface design decisions
 **Example**: "Users find our dashboard confusing. Can you help redesign it?"
 
-### gitops-ci-specialist
-**When to use**: Before committing code or when troubleshooting CI/CD issues
-**What it does**: Ensures proper Git workflows and CI/CD pipeline success
-**Example**: "My GitHub Actions are failing. Can you help debug this?"
+### technical-writer
+**When to use**: When creating documentation, blogs, tutorials, or API docs
+**What it does**: Creates clear, concise technical documentation and content
+**Example**: "Help me write API documentation for our authentication endpoints."
 
 ### responsible-ai-code
 **When to use**: For AI/ML features, accessibility validation, or ethical code review
 **What it does**: Ensures responsible AI practices, accessibility compliance, and inclusive design
 **Example**: "Can you check if our ML recommendation system has bias issues?" or "Does our form meet accessibility standards?"
+
+### gitops-ci-specialist
+**When to use**: Before committing code or when troubleshooting CI/CD issues
+**What it does**: Ensures proper Git workflows and CI/CD pipeline success
+**Example**: "My GitHub Actions are failing. Can you help debug this?"
 
 ## Best Practices
 

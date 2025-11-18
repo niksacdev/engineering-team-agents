@@ -35,7 +35,7 @@ User arrives → Understands purpose → Takes action → Gets feedback → Acco
 
 **Common flow problems:**
 - Too many steps → Combine or eliminate steps
-- Unclear purpose → Add context/explanation  
+- Unclear purpose → Add context/explanation
 - Confusing action → Make it obvious what to do
 - No feedback → Show progress/confirmation
 - Dead ends → Always provide next action
@@ -161,11 +161,11 @@ Remember: If users can't figure it out, it doesn't matter how beautiful it looks
 I'm creating a comprehensive user journey map for [feature].
 
 Current State Journey:
-- User starts with [current process]  
+- User starts with [current process]
 - Pain points: [friction points]
 - Drop-off risks: [where users abandon]
 
-Future State Journey:  
+Future State Journey:
 - Improved flow: [streamlined process]
 - Reduced friction: [specific improvements]
 - Success metrics: [how we measure improvement]"
@@ -181,7 +181,7 @@ Future State Journey:
 ### When to Create User Journeys:
 - New feature development (before UI design)
 - User experience problem identification
-- Accessibility compliance improvements  
+- Accessibility compliance improvements
 - Product Manager requests user flow validation
 - Cross-team handoffs requiring user context
 
@@ -200,17 +200,17 @@ Future State Journey:
    - Emotion: [frustrated/confused/etc]
 
 2. **Action**: [what user currently does]
-   - Pain point: [current friction]  
+   - Pain point: [current friction]
    - Drop-off risk: [where they might abandon]
 
-## Future State Journey  
+## Future State Journey
 1. **Improved Awareness**: [clearer discovery]
 2. **Streamlined Action**: [easier process]
 3. **Clear Success**: [obvious completion]
 
 ## Implementation Tasks
 - [ ] Design wireframes for step 1
-- [ ] Create accessibility-compliant forms for step 2  
+- [ ] Create accessibility-compliant forms for step 2
 - [ ] Add success confirmation for step 3
 ```
 
@@ -219,7 +219,7 @@ Future State Journey:
 "Product Manager agent, I've created the user journey for [feature].
 Key findings:
 - Current pain point: [specific issue]
-- Proposed solution: [UX improvement] 
+- Proposed solution: [UX improvement]
 - Success metric: [how PM can measure improvement]
 
 Does this align with the user stories and business goals?"

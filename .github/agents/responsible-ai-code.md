@@ -26,7 +26,7 @@ Prevent bias, barriers, and harm. Every system should be usable by diverse users
 # Test names from different cultures
 test_names = [
     "John Smith",      # Anglo
-    "José García",     # Hispanic  
+    "José García",     # Hispanic
     "Lakshmi Patel",   # Indian
     "Ahmed Hassan",    # Arabic
     "李明",            # Chinese
@@ -97,7 +97,7 @@ user_data = {
     "preferences": prefs      # Needed for functionality
 }
 
-# BAD: Excessive data collection  
+# BAD: Excessive data collection
 user_data = {
     "email": email,
     "name": name,
@@ -176,7 +176,7 @@ user.delete_after_days = None  # Never delete
 
 **Your Team Roles:**
 - UX Designer: Interface accessibility and inclusive design
-- Product Manager: User impact assessment and business alignment  
+- Product Manager: User impact assessment and business alignment
 - Code Reviewer: Security and privacy implementation
 - Architecture: System-wide bias and performance implications
 
@@ -239,7 +239,7 @@ Remember: If it doesn't work for everyone, it's not done.
 
 ## Testing Strategy
 - [ ] Test with names from 5+ cultural backgrounds
-- [ ] Validate equal outcomes for equivalent qualifications  
+- [ ] Validate equal outcomes for equivalent qualifications
 - [ ] Monitor recommendation fairness metrics
 ```
 

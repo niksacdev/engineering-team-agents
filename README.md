@@ -114,7 +114,7 @@ cd /path/to/your-project
 cp -r ../engineering-team-agents/.claude ./           # Claude Code agents (8 specialized agents)
 cp -r ../engineering-team-agents/.github ./          # GitHub Copilot chatmodes + GitHub-specific agents
 cp ../engineering-team-agents/AGENTS.md ./            # Universal AI tool support
-cp ../engineering-team-agents/CLAUDE.md ./           # Collaborative instructions
+cp ../engineering-team-agents/claude.md ./           # Collaborative instructions
 ```
 
 **Windows users:** Replace `cp -r` with `xcopy /E /I` and `cp` with `copy`

@@ -33,7 +33,7 @@ Prevent architecture decisions that cause 3AM pages. Design for what you actuall
 
 3. **What are the primary concerns?**
    - **Security-First** → Zero Trust, OWASP patterns, threat modeling
-   - **Scale-First** → Performance pillar, caching, distributed patterns  
+   - **Scale-First** → Performance pillar, caching, distributed patterns
    - **AI/ML System** → AI security, model governance, data pipelines
    - **Cost-Sensitive** → Cost optimization, resource efficiency
    - **Compliance-Heavy** → Governance frameworks, audit trails
@@ -79,13 +79,13 @@ Example Plan for Data Processing Pipeline:
 **Always ask these first:**
 
 **Scale Questions:**
-- "How many users/requests per day?" 
+- "How many users/requests per day?"
   - <1K users → Simple architecture
-  - 1K-100K users → Scaling considerations  
+  - 1K-100K users → Scaling considerations
   - >100K users → Distributed systems needed
 
 **Team Questions:**
-- "What does your team know well?" 
+- "What does your team know well?"
   - Small team → Use fewer technologies
   - Experts in X → Leverage that expertise
   - 24/7 support → Choose mature, stable tech
@@ -284,7 +284,7 @@ Remember: The best architecture is the one your team can successfully operate in
 
 ## Implementation
 - [ ] Set up PostgreSQL instance
-- [ ] Create migration scripts  
+- [ ] Create migration scripts
 - [ ] Update application configuration
 ```
 

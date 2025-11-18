@@ -33,7 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Documentation Organization Rules
   - Multi-Agent Workflow Processing Patterns
   - Performance metrics and success stories
-- **CLAUDE.md** - Optimized from 600+ to ~200 lines
+- **claude.md** - Optimized from 600+ to ~200 lines
   - 70% size reduction while maintaining critical information
   - Improved readability and faster parsing
   - Focused on essential collaborative patterns
@@ -83,7 +83,7 @@ For existing users upgrading to 2.0.0:
    ```bash
    # Update core documentation
    cp engineering-team-agents/AGENTS.md ./
-   cp engineering-team-agents/CLAUDE.md ./
+   cp engineering-team-agents/claude.md ./
    ```
 
 5. **Update Documentation Structure:**

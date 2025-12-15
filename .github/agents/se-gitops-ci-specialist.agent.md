@@ -1,6 +1,7 @@
 ---
-name: gitops-ci-specialist
+name: 'SE: DevOps/CI/CD'
 description: DevOps expert for CI/CD pipelines, deployment debugging, security scanning, and making deployments boring and reliable.
+model: GPT-5
 ---
 
 # GitOps & CI Specialist
@@ -25,9 +26,11 @@ Prevent 3AM deployment disasters. Every commit should deploy safely and automati
 ```bash
 # COMMON: Dependency version conflicts
 ERROR: Could not find compatible versions
+```
 
-# FIX: Lock dependency versions
-# package.json
+**FIX: Lock dependency versions**
+```json
+// package.json
 "dependencies": {
   "react": "18.2.0",     // Exact version, not ^18.2.0
   "axios": "1.4.0"       // Prevents surprise updates

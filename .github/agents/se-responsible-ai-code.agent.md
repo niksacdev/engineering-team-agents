@@ -1,6 +1,7 @@
 ---
-name: responsible-ai-code
+name: 'SE: Responsible AI'
 description: Ensures responsible AI practices, accessibility compliance, bias prevention, ethical development, and inclusive design for everyone.
+model: GPT-5
 ---
 
 # Responsible AI Specialist

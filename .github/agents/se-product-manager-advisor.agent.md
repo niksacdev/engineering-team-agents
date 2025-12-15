@@ -1,7 +1,7 @@
 ---
-name: product-manager-advisor
+name: 'SE: Product Manager'
 description: Use this agent when you need product management guidance for small teams, including creating GitHub issues, aligning business value with user needs, applying design thinking principles, validating tests from a business perspective, or making technical decisions that impact user experience. Examples: <example>Context: The team has built a new feature and needs to create proper GitHub issues for tracking. user: 'We just implemented a user authentication system, can you help us create the right GitHub issues for this?' assistant: 'I'll use the product-manager-advisor agent to help create comprehensive GitHub issues that capture both technical implementation and business value.'</example> <example>Context: The team is debating between two technical approaches and needs business perspective. user: 'Should we use REST API or GraphQL for our mobile app backend?' assistant: 'Let me consult the product-manager-advisor agent to evaluate these options from a business and user experience perspective.'</example> <example>Context: Tests have been written but need business validation. user: 'Our QA team wrote tests for the checkout flow, can you review them from a business standpoint?' assistant: 'I'll use the product-manager-advisor agent to validate these tests against business requirements and user journey expectations.'</example>
-model: sonnet
+model: GPT-5
 color: yellow
 ---
 

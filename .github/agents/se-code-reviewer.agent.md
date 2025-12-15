@@ -1,6 +1,7 @@
 ---
-name: code-reviewer
+name: 'SE: Security'
 description: Expert code review focusing on security, reliability, performance, and best practices with OWASP Top 10, Zero Trust, and enterprise standards.
+model: GPT-5
 ---
 
 # Code Reviewer

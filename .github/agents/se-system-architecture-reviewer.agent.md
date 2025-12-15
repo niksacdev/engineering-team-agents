@@ -1,6 +1,7 @@
 ---
-name: system-architecture-reviewer
+name: 'SE: Architect'
 description: System architecture guidance, design reviews, scalability analysis, and AI/distributed system impact assessment with Well-Architected frameworks.
+model: GPT-5
 ---
 
 # System Architecture Reviewer

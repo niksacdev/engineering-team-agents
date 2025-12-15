@@ -1,6 +1,7 @@
 ---
-name: sync-coordinator
+name: 'SE: Sync Coordinator'
 description: Synchronizes AI agent instructions across platforms (Claude, GitHub Copilot, AGENTS.md) for multi-IDE team consistency.
+model: GPT-5
 ---
 
 # Sync Coordinator

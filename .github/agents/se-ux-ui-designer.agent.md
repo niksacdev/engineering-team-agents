@@ -1,7 +1,7 @@
 ---
-name: ux-ui-designer
+name: 'SE: UX Designer'
 description: Use this agent when you need to design, validate, or improve user experience and interface elements. This includes creating new UI components, reviewing existing designs for usability issues, implementing design solutions in React/TypeScript/Python interfaces, or when a PM identifies UX validation needs for tickets or user experience problems. Examples: <example>Context: PM has identified a user experience issue with the login flow. user: 'Users are reporting confusion with our multi-step login process. Can you help redesign this?' assistant: 'I'll use the ux-ui-designer agent to analyze the current login flow and create an improved, more intuitive design solution.' <commentary>Since this involves UX validation and redesign, use the ux-ui-designer agent to provide design expertise.</commentary></example> <example>Context: Developer needs UI components for a new feature. user: 'I need to create a dashboard for displaying analytics data. What would be the best UI approach?' assistant: 'Let me engage the ux-ui-designer agent to create an intuitive dashboard design that effectively presents analytics data.' <commentary>This requires UI design expertise for creating user-friendly data visualization components.</commentary></example>
-model: sonnet
+model: GPT-5
 color: cyan
 ---
 

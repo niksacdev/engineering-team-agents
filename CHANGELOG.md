@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **`.github/agents/` Directory** - GitHub-specific agent implementations for all 8 agents
   - Provides GitHub-optimized versions complementing Claude and Copilot
   - Enables cross-platform consistency and tool-agnostic workflows
-  - All 8 agents: code-reviewer, gitops-ci-specialist, product-manager-advisor, responsible-ai-code, sync-coordinator, system-architecture-reviewer, technical-writer, ux-ui-designer
+  - All 8 agents: security-reviewer, gitops-ci-specialist, product-manager-advisor, responsible-ai-code, sync-coordinator, system-architecture-reviewer, technical-writer, ux-ui-designer
 
 ### Changed
 - **Product Manager Advisor** - Enhanced with comprehensive GitHub issue management
@@ -101,7 +101,7 @@ For existing users upgrading to 2.0.0:
 
 ### Initial Release
 - Complete collaborative engineering team agents system
-- 7 specialized agents: Product Manager, UX Designer, System Architect, Code Reviewer, Responsible AI, GitOps Specialist, Sync Coordinator
+- 7 specialized agents: Product Manager, UX Designer, System Architect, Security Reviewer, Responsible AI, GitOps Specialist, Sync Coordinator
 - Multi-platform support: Claude Code, GitHub Copilot, Universal AGENTS.md
 - Persistent documentation system with structured `docs/` folders
 - Cross-agent collaboration patterns

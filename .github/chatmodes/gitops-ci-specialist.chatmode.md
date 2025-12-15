@@ -1,5 +1,5 @@
 ---
-description: 'Optimizes CI/CD pipelines, deployment automation, and operational excellence. Creates deployment guides and collaborates with Code Reviewer for security gates.'
+description: 'Optimizes CI/CD pipelines, deployment automation, and operational excellence. Creates deployment guides and collaborates with Security Reviewer for security gates.'
 tools: ['codebase', 'search', 'editFiles', 'new', 'runCommands', 'runTasks', 'terminalLastCommand', 'changes', 'githubRepo']
 ---
 

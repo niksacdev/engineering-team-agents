@@ -77,12 +77,12 @@ Instead of isolated AI responses, you get agents that:
    # Architecture collaboration  
    /architecture-review "Planning to add Redis caching layer"
    → Architecture reviewer analyzes system impact, creates ADR
-   → Asks Code Reviewer about security implications  
+   → Asks Security Reviewer about security implications  
    → Hands off to GitOps for deployment considerations
    
    # Quality-focused development
    /code-quality "Review this payment processing function"
-   → Code Reviewer checks security, asks Architecture about scalability
+   → Security Reviewer checks security, asks Architecture about scalability
    → Creates detailed review report with specific fixes
    → Escalates compliance questions to Responsible AI agent
    
@@ -114,14 +114,14 @@ Each command triggers **team collaboration** and **document creation**:
 - **Example**: `/ui-validation "Our mobile checkout flow has 60% abandonment rate"`
 
 ### /architecture-review 🏛️
-**Collaborative Role**: Architecture + Code Reviewer + GitOps
+**Collaborative Role**: Architecture + Security Reviewer + GitOps
 - **Creates**: Architecture Decision Records (ADRs), system design documentation
-- **Collaborates with**: Code Reviewer for security, GitOps for deployment complexity
+- **Collaborates with**: Security Reviewer for security, GitOps for deployment complexity
 - **Documents**: `docs/architecture/ADR-[number]-[title].md`
 - **Example**: `/architecture-review "Migrating from monolith to microservices architecture"`
 
 ### /code-quality 🔍
-**Collaborative Role**: Code Reviewer + Architecture + Responsible AI
+**Collaborative Role**: Security Reviewer + Architecture + Responsible AI
 - **Creates**: Detailed review reports with specific code fixes
 - **Collaborates with**: Architecture for system impact, Responsible AI for bias/accessibility
 - **Documents**: `docs/code-review/[date]-[component]-review.md`
@@ -142,9 +142,9 @@ Each command triggers **team collaboration** and **document creation**:
 - **Example**: `/responsible-ai "Implement content moderation for user-generated content"`
 
 ### /cicd-optimization 🚀
-**Collaborative Role**: GitOps + Code Reviewer + Architecture
+**Collaborative Role**: GitOps + Security Reviewer + Architecture
 - **Creates**: Deployment guides, CI/CD optimization reports, operational runbooks
-- **Collaborates with**: Code Reviewer for security gates, Architecture for system dependencies
+- **Collaborates with**: Security Reviewer for security gates, Architecture for system dependencies
 - **Documents**: `docs/gitops/[pipeline]-optimization.md`
 - **Example**: `/cicd-optimization "Our deployment pipeline takes 45 minutes, need to optimize"`  
 
@@ -208,7 +208,7 @@ Your repository becomes a **collaborative knowledge hub**:
 ### 🏗️ **Design Phase** (Collaborative Architecture & UX)  
 ```
 /architecture-review "Technical approach: [system design]"
-→ Creates ADR → Asks Code Reviewer about security → Consults GitOps on deployment
+→ Creates ADR → Asks Security Reviewer about security → Consults GitOps on deployment
 
 /ui-validation "User workflow: [current vs desired experience]"
 → Maps journey → Validates accessibility → Partners with Product Manager

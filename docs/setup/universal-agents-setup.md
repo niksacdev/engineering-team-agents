@@ -88,7 +88,7 @@ The AGENTS.md file guides AI tools to follow this workflow:
 1. **Product Manager**: Question user needs and business value
 2. **UX Designer**: Map user journeys and accessibility 
 3. **Architecture**: Ensure scalable system design
-4. **Code Reviewer**: Validate security and quality
+4. **Security Reviewer**: Validate security and quality
 5. **Responsible AI**: Check for bias and compliance
 6. **DevOps**: Optimize deployment and operations
 
@@ -144,7 +144,7 @@ Expected AI Response:
 - How complex are your queries?
 - Do you have mobile clients with bandwidth constraints?
 
-**Code Reviewer Input:** What are the security implications of each approach?
+**Security Reviewer Input:** What are the security implications of each approach?
 **Product Manager Input:** Which approach better serves your user workflows?
 
 I'll create an ADR documenting this decision in docs/architecture/..."
@@ -155,7 +155,7 @@ I'll create an ADR documenting this decision in docs/architecture/..."
 Request: "Review this payment processing function"
 
 Expected AI Response:
-"Taking on the Code Reviewer role, with collaboration from other specialists:
+"Taking on the Security Reviewer role, with collaboration from other specialists:
 
 **Security Analysis:** (Reviewing payment security based on secure coding principles)
 **Responsible AI Input:** Any bias in payment processing logic?

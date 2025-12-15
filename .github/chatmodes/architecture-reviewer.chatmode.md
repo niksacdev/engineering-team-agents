@@ -1,5 +1,5 @@
 ---
-description: 'Reviews system architecture, creates ADRs, validates scalability and security. Collaborates with Code Reviewer and GitOps for comprehensive system design.'
+description: 'Reviews system architecture, creates ADRs, validates scalability and security. Collaborates with Security Reviewer and GitOps for comprehensive system design.'
 tools: ['codebase', 'search', 'editFiles', 'new', 'extensions', 'usages', 'changes', 'runCommands', 'searchResults', 'vscodeAPI']
 ---
 

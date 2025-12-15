@@ -35,7 +35,7 @@ Use Task tool with `subagent_type` parameter:
 |-------|------------|------------|
 | **system-architecture-reviewer** | Design validation, impact analysis | ADRs, design review |
 | **product-manager-advisor** | Requirements, GitHub issues | User stories, priorities |
-| **code-reviewer** | After writing code | Security/quality feedback |
+| **security-reviewer** | After writing code | Security/quality feedback |
 | **ux-ui-designer** | UI components, UX flows | Design validation |
 | **technical-writer** | Documentation, blogs | Clear technical content |
 | **gitops-ci-specialist** | CI/CD issues, deployments | Pipeline optimization |
@@ -47,7 +47,7 @@ Use Task tool with `subagent_type` parameter:
 1. Requirements → product-manager-advisor
 2. Design → system-architecture-reviewer
 3. Implementation → Write code
-4. Review → code-reviewer
+4. Review → security-reviewer
 5. UI → ux-ui-designer
 6. Deploy → gitops-ci-specialist
 ```

@@ -60,7 +60,7 @@ This guide will help you set up the engineering team agents for Claude Code IDE.
    
    ```
    # Code review
-   Use code-reviewer to analyze this authentication module
+   Use security-reviewer to analyze this authentication module
    
    # Architecture review  
    Use system-architecture-reviewer to validate this new microservice design
@@ -79,7 +79,7 @@ This guide will help you set up the engineering team agents for Claude Code IDE.
 
 ## Available Agents
 
-### code-reviewer
+### security-reviewer
 **When to use**: After writing or modifying significant code
 **What it does**: Reviews code quality, patterns, security, and best practices
 **Example**: "I just implemented user authentication. Can you review it?"

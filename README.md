@@ -19,7 +19,7 @@ graph TD
     PM[Product Manager<br/>📊 Requirements & Business Value]
     UX[UX Designer<br/>🎨 User Journeys & Accessibility]
     ARCH[System Architect<br/>🏛️ ADRs & System Design]
-    CODE[Code Reviewer<br/>🔍 Security & Quality]
+    CODE[Security Reviewer<br/>🔍 Security & Quality]
     TECH[Technical Writer<br/>✍️ Documentation & Content]
     AI[Responsible AI<br/>🌍 Bias & Compliance]
     DEVOPS[DevOps Specialist<br/>🚀 Deployment & Operations]
@@ -59,9 +59,9 @@ Leverages Claude SubAgents and GitHub Copilot chatmodes, with universal AGENTS.m
 Every feature request follows this **collaborative workflow**:
 
 1. **🔍 Product Manager** asks: "What user need does this solve? How do we measure success?"
-2. **🎨 UX Designer** maps user journeys and validates accessibility requirements  
+2. **🎨 UX Designer** maps user journeys and validates accessibility requirements
 3. **🏛️ System Architect** ensures secure, scalable design and creates Architecture Decision Records
-4. **🔍 Code Reviewer** validates security, reliability, and implementation quality
+4. **🔍 Security Reviewer** validates security, reliability, and implementation quality
 5. **🌍 Responsible AI** prevents bias and ensures inclusive, accessible design
 6. **🚀 GitOps Specialist** optimizes deployment and operational excellence
 
@@ -76,20 +76,20 @@ Each agent creates **persistent documentation** and collaborates with teammates:
 |-------|-------------------|---------------------|-------------|
 | **📊 Product Manager** | Clarifies user needs, validates business value | `docs/product/` requirements, GitHub issues | UX Designer for user journeys |
 | **🎨 UX Designer** | Maps user journeys, ensures accessibility | `docs/ux/` user journey maps, design reports | Responsible AI for WCAG compliance |
-| **🏛️ System Architect** | Creates ADRs, validates security, reliablility, scalability | `docs/architecture/` ADRs, system designs | Code Reviewer for security review |
-| **🔍 Code Reviewer** | Reviews security, quality, performance | `docs/code-review/` detailed review reports | DevOps for deployment concerns |
+| **🏛️ System Architect** | Creates ADRs, validates security, reliablility, scalability | `docs/architecture/` ADRs, system designs | Security Reviewer for security review |
+| **🔍 Security Reviewer** | Reviews security, quality, performance | `docs/code-review/` detailed review reports | DevOps for deployment concerns |
 | **✍️ Technical Writer** | Creates documentation, blogs, tutorials, API docs | `docs/technical-writing/` documentation, guides | Product Manager for requirements clarity |
-| **🌍 Responsible AI** | Prevents bias, ensures accessibility | `docs/responsible-ai/` RAI-ADRs, compliance tracking | UX Designer for accessibility validation |
-| **🚀 GitOps Specialist** | Optimizes CI/CD, deployment reliability | `docs/gitops/` deployment guides, runbooks | Code Reviewer for security gates |
+| **🌍 Responsible AI** | Prevents bias, ensures inclusive, accessible design | `docs/responsible-ai/` RAI-ADRs, compliance tracking | UX Designer for accessibility validation |
+| **🚀 GitOps Specialist** | Optimizes CI/CD, deployment reliability | `docs/gitops/` deployment guides, runbooks | Security Reviewer for security gates |
 
 ### 🔗 Cross-Agent Collaboration Examples
 
 **Feature Development Flow:**
 ```
-Feature Request → Product Manager (requirements) 
-              → UX Designer (user journey) 
+Feature Request → Product Manager (requirements)
+              → UX Designer (user journey)
               → System Architect (technical design)
-              → Code Reviewer (implementation quality)
+              → Security Reviewer (implementation quality)
               → Responsible AI (bias & accessibility check)
               → GitOps (deployment optimization)
 ```
@@ -97,8 +97,8 @@ Feature Request → Product Manager (requirements)
 **Complex Decision Making:**
 - **Product Manager** to **UX Designer**: "Can you map the user journey for this checkout flow?"
 - **UX Designer** to **Responsible AI**: "Any accessibility barriers with this interface design?"
-- **System Architect** to **Code Reviewer**: "Security implications of this microservices approach?"
-- **Code Reviewer** to **GitOps**: "Any deployment concerns with this database migration?"
+- **System Architect** to **Security Reviewer**: "Security implications of this microservices approach?"
+- **Security Reviewer** to **GitOps**: "Any deployment concerns with this database migration?"
 
 
 ## ⚡ Setup
@@ -176,8 +176,8 @@ Each IDE has a collaborative initialization process that helps agents understand
 → UX maps journey → asks Architecture for technical constraints → creates documentation
 
 # 3. Validate everything with specialists
-"Use code-reviewer: Review this authentication implementation"  
-→ Code Reviewer checks security → asks Architecture for system impact → creates review report
+"Use security-reviewer: Review this authentication implementation"
+→ Security Reviewer checks security → asks Architecture for system impact → creates review report
 ```
 
 **Result**: Every interaction creates documentation and enables **cross-specialist collaboration** that builds institutional knowledge.

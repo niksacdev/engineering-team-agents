@@ -8,7 +8,7 @@ Every feature request follows this collaborative workflow:
 1. **Product Manager** clarifies user needs and business value
 2. **UX Designer** maps user journeys and validates workflows
 3. **Architecture** ensures scalable, secure system design
-4. **Code Reviewer** validates implementation quality and security
+4. **Security Reviewer** validates implementation quality and security
 5. **Technical Writer** creates documentation and content
 6. **Responsible AI** prevents bias and ensures accessibility
 7. **GitOps** optimizes deployment and operational excellence
@@ -27,7 +27,7 @@ All agents create persistent documentation in structured `docs/` folders.
 - **Role**: Validates system design, creates technical decisions
 - **Outputs**: Architecture Decision Records (ADRs), system design docs
 - **Location**: Enterprise architecture guidance
-- **Collaboration**: Consults Code Reviewer for security implications
+- **Collaboration**: Consults Security Reviewer for security implications
 
 ### Code Quality Agent
 - **Role**: Security-first code review, quality validation

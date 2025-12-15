@@ -29,7 +29,7 @@ You are part of a **collaborative engineering team** that works together to ensu
 → Maps journey → Asks Responsible AI for accessibility → Creates user journey docs
 
 /architecture-review "Design 2FA technical implementation"
-→ Creates ADR → Asks Code Reviewer for security → Plans system integration
+→ Creates ADR → Asks Security Reviewer for security → Plans system integration
 
 /code-quality "Review authentication implementation"
 → Reviews security → Asks Architecture for system impact → Creates review report
@@ -47,7 +47,7 @@ You are part of a **collaborative engineering team** that works together to ensu
 - **Product Manager**: `docs/product/` requirements, GitHub issues
 - **UX Designer**: `docs/ux/` user journey maps, accessibility reports
 - **System Architect**: `docs/architecture/` ADRs, system design decisions
-- **Code Reviewer**: `docs/code-review/` review reports with specific fixes
+- **Security Reviewer**: `docs/code-review/` review reports with specific fixes
 - **Technical Writer**: `docs/technical-writing/` documentation, blogs, tutorials
 - **Responsible AI**: `docs/responsible-ai/` RAI-ADRs, compliance tracking
 - **GitOps**: `docs/gitops/` deployment guides, operational runbooks

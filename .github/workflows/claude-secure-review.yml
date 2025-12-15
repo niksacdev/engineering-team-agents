@@ -108,7 +108,7 @@ jobs:
             **Review Focus Areas:**
             1. **Business Value**: Does this solve a real user need?
             2. **Architecture**: Use system-architecture-reviewer for design decisions
-            3. **Security**: Use code-reviewer for security vulnerabilities  
+            3. **Security**: Use security-reviewer for security vulnerabilities  
             4. **Accessibility**: Use responsible-ai-code for WCAG compliance
             5. **User Experience**: Use ux-ui-designer for usability validation
             6. **Quality**: Use quality gates from our enterprise standards

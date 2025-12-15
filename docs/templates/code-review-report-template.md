@@ -1,7 +1,7 @@
 # Code Review Report: [COMPONENT/FEATURE NAME]
 
 **Date**: [YYYY-MM-DD]  
-**Reviewer**: Code Reviewer Agent  
+**Reviewer**: Security Reviewer Agent  
 **Files Reviewed**: [list of files or PR/commit reference]
 
 ## Executive Summary

@@ -1,6 +1,6 @@
 # Software Engineering Agents
 
-7 specialized agents covering the full software development lifecycle from UX design and architecture to security and DevOps.
+8 specialized agents covering the full software development lifecycle from UX design and architecture to security and DevOps.
 
 ## Available Agents
 
@@ -8,9 +8,10 @@
 - **SE: UX Designer** - User experience design, journey mapping, and accessibility
 - **SE: Architect** - System architecture, design reviews, and ADRs
 - **SE: Security** - Code review, security analysis, and best practices
+- **SE: Tech Writer** - Technical documentation, blogs, and user guides
 - **SE: Responsible AI** - Accessibility compliance, bias prevention, and ethical development
 - **SE: DevOps/CI/CD** - CI/CD pipelines, deployment debugging, and reliability
-- **SE: Tech Writer** - Technical documentation, blogs, and user guides
+- **SE: Sync Coordinator** - Cross-platform agent synchronization for multi-IDE teams
 
 ## Usage
 

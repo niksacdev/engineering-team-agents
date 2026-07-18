@@ -1,0 +1,39 @@
+{
+  "name": "engineering-team-agents",
+  "description": "8 specialized agents for collaborative software engineering: Product Manager, UX Designer, System Architect, Code Reviewer, Technical Writer, Responsible AI, GitOps Specialist, and Sync Coordinator",
+  "version": "2.0.0",
+  "author": {
+    "name": "Nikhil Sachdeva",
+    "url": "https://github.com/niksacdev"
+  },
+  "homepage": "https://github.com/niksacdev/engineering-team-agents",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/niksacdev/engineering-team-agents.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "collaborative-engineering",
+    "product-management",
+    "ux-design",
+    "architecture",
+    "code-review",
+    "security",
+    "technical-writing",
+    "responsible-ai",
+    "devops",
+    "ci-cd",
+    "sdlc"
+  ],
+  "agents": [
+    "./.claude/agents/product-manager-advisor.md",
+    "./.claude/agents/ux-ui-designer.md",
+    "./.claude/agents/code-reviewer.md",
+    "./.claude/agents/system-architecture-reviewer.md",
+    "./.claude/agents/technical-writer.md",
+    "./.claude/agents/responsible-ai-code.md",
+    "./.claude/agents/gitops-ci-specialist.md",
+    "./.claude/agents/sync-coordinator.md"
+  ]
+}

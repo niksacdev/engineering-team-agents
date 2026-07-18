@@ -105,6 +105,19 @@ Feature Request → Product Manager (requirements)
 
 ### 1. Install Collaborative Agent System
 
+#### Option A: Claude Code Plugin (Recommended ⭐)
+
+Install directly as a plugin in Claude Code:
+
+```bash
+# Install from GitHub
+/plugin install niksacdev/engineering-team-agents
+```
+
+All 8 agents will be immediately available via the Task tool!
+
+#### Option B: Manual Installation
+
 ```bash
 # Clone the collaborative engineering template
 git clone https://github.com/niksacdev/engineering-team-agents.git
